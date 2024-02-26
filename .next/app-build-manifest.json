@@ -1,15 +1,5 @@
 {
   "pages": {
-    "/(studio)/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(studio)/layout.js"
-    ],
-    "/(studio)/studio/[[...index]]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(studio)/studio/[[...index]]/page.js"
-    ],
     "/(site)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

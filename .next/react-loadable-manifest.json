@@ -1,1 +1,24 @@
-{}
+{
+  "../layouts/ComponentRenderer.jsx -> @/components/ScalableImageOnScroll": {
+    "id": "../layouts/ComponentRenderer.jsx -> @/components/ScalableImageOnScroll",
+    "files": [
+      "static/chunks/_app-pages-browser_components_ScalableImageOnScroll_jsx.js"
+    ]
+  },
+  "../layouts/ComponentRenderer.jsx -> @/components/ScrollableText": {
+    "id": "../layouts/ComponentRenderer.jsx -> @/components/ScrollableText",
+    "files": [
+      "static/chunks/_app-pages-browser_components_ScrollableText_jsx.js"
+    ]
+  },
+  "../node_modules/@sanity/visual-editing/dist/_chunks/index-CCPqf31P.js -> ./Overlays-bQSRS-P9.js": {
+    "id": "../node_modules/@sanity/visual-editing/dist/_chunks/index-CCPqf31P.js -> ./Overlays-bQSRS-P9.js",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_sanity_visual-editing_dist__chunks_Overlays-bQSRS-P9_js.js"
+    ]
+  },
+  "../node_modules/@sanity/visual-editing/dist/_chunks/index-CCPqf31P.js -> react-dom/client": {
+    "id": "../node_modules/@sanity/visual-editing/dist/_chunks/index-CCPqf31P.js -> react-dom/client",
+    "files": []
+  }
+}

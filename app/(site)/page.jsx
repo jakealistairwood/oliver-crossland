@@ -5,7 +5,7 @@ import Homepage from "@/pages/Homepage";
 export default async function Home() {
   const data = await fetchHomepageData();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="">
         <Homepage data={data} />
     </main>
   );

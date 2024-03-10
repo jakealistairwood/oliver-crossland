@@ -10,6 +10,12 @@ module.exports = {
       center: true,
     },
     extend: {
+      fontFamily: {
+        heading: ["Nohemi", "system-ui", "sans-serif"],
+      },
+      colors: {
+        offBlack: '#1a191c'
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

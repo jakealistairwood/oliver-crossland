@@ -3,12 +3,11 @@
 import LayoutRenderer from "@/layouts/LayoutRenderer";
 
 const Homepage = (props) => {
-    const { data } = props;
+    const { data, portfolio } = props;
 
     return (
         <div>
-            <LayoutRenderer page={data} />
-            <h1>This is the homepage</h1>
+            <LayoutRenderer page={data} portfolio={portfolio} />
         </div>
     )
 }

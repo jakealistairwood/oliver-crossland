@@ -1,9 +1,13 @@
-import {Inter} from 'next/font/google'
+// import { Inter } from 'next/font/google'
+import { manrope, barlowCondenseed } from '@/utils/fonts'
 import '../globals.css'
 import SmoothScroll from '@/components/SmoothScroll'
+import ProgressBar from '@/components/globals/ProgressBar'
 import Navbar from '@/components/globals/Navbar'
 
-const inter = Inter({subsets: ['latin']})
+// const inter = Inter({subsets: ['latin']})
+// const manrope = Manrope({ subsets: ['latin']})
+// const barlowCondensed = Barlow_Condensed({ subsets: ['latin'], weight: ['500', '700'] })
 
 export const metadata = {
   title: 'Oli Crossland Videography',
@@ -14,7 +18,8 @@ export const metadata = {
 export default function RootLayout({children}) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${manrope.variable} ${barlowCondenseed.variable}`}>
+        <ProgressBar />
         <Navbar />
         <SmoothScroll>{children}</SmoothScroll>
       </body>

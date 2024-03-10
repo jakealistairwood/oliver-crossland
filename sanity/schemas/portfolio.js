@@ -26,6 +26,13 @@ const portfolio = defineType({
             description: "This is a basically a summary of the project.",
         },
         {
+            name: "make_featured",
+            title: "Make Featured",
+            type: "boolean",
+            description: "On the selected works/portfolio page, the thumbnail will span the full width",
+            initialValue: false,
+        },
+        {
             name: "featured_image",
             title: "Featured Image",
             type: "image",

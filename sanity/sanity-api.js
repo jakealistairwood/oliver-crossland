@@ -12,3 +12,11 @@ export const fetchHomepageData = async () => {
         }[0]`
     );
 }
+
+export const fetchPortolio = async () => {
+    return createClient(clientConfig).fetch(
+        groq`*[_type == "portfolio"] {
+            ...
+          }`
+    )
+}

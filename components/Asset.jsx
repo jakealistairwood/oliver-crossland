@@ -1,3 +1,5 @@
+import React from "react";
+
 const Asset = (props) => {
     console.log(props)
 

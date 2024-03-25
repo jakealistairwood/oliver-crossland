@@ -14,6 +14,17 @@ const selectedWorks = defineType({
             name: "description",
             type: "text",
             title: "Description",
+        },
+        {
+            name: "featured_projects",
+            type: "array",
+            title: "Featured Projects",
+            of: [
+                {
+                    type: "reference",
+                    to: [{ type: "portfolio" }],
+                }
+            ]
         }
     ],
 })

@@ -1,4 +1,4 @@
-import {useRef} from 'react'
+import React, { useRef } from 'react'
 import {motion, useTransform, useScroll} from 'framer-motion'
 
 const ScrollableText = ({text_to_animate}) => {

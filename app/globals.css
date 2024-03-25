@@ -17,26 +17,56 @@ h6 {
   font-family: var(--font-barlow-condensed);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.heading-alt {
+  font-family: var(--font-base) !important;
+}
+
+.mono {
+  font-family: var(--font-mono) !important;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: white;
+}
+
+.rounded-section {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+
+.pb-xs {
+  @apply pb-16;
+}
+
+.pb-sm {
+  @apply pb-24;
+}
+
+.pb-md {
+  @apply pb-32;
+}
+
+.pt-xs {
+  @apply pt-16;
+}
+
+.pt-sm {
+  @apply pt-24;
+}
+
+.pt-md {
+  @apply pt-32;
+}
+
+.bg-offWhite {
+  @apply !bg-[#F6F6F6];
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
 import {urlFor} from '@/utils/SanityImage'
 import AnimatedText from './AnimatedText'
@@ -21,7 +21,7 @@ const Masthead = (props) => {
   }, [])
 
   return (
-    <div className="relative min-h-screen w-full flex items-stretch">
+    <div className="sticky top-0 min-h-screen w-full flex items-stretch">
       <div
         className="absolute inset-0 z-[2]"
         style={{
@@ -35,6 +35,7 @@ const Masthead = (props) => {
           priority
           objectFit="cover"
           fill
+          quality={100}
           alt={image?.alt || ''}
           className="absolute inset-0 z-[1]"
         />
@@ -84,7 +85,7 @@ const Masthead = (props) => {
                 {bottom_banner.social_links && bottom_banner.social_links.length > 0 && (
                     <div className="flex items-center gap-10">
                         {bottom_banner.social_links.map((social_link, i) => (
-                            <Link href={social_link.link || ""} className="text-white/60" key={`social-link-${i}`}>
+                            <Link href={social_link.link || ""} className="transition-colors duration-200 ease text-white/60 hover:text-white/100" key={`social-link-${i}`}>
                                 {social_link.label}
                             </Link>
                         ))}

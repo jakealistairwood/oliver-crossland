@@ -8,6 +8,8 @@ const ScrollableText = dynamic(() => import("@/components/ScrollableText"));
 const TextImageMarquee = dynamic(() => import("@/components/TextImageMarquee"));
 const VideoPlayer = dynamic(() => import("@/components/VideoPlayer"));
 const SelectedWorks = dynamic(() => import("@/components/SelectedWorks"));
+const FullWidthVideo = dynamic(() => import("@/components/FullWidthVideo"));
+const ImageDivider = dynamic(() => import("@/components/ImageDivider"));
 
 const ComponentRenderer = ({ components = [] }) => {
     const renderComponent = (layoutName, props) => {
@@ -18,7 +20,9 @@ const ComponentRenderer = ({ components = [] }) => {
             scrollableText: ScrollableText,
             textImageMarquee: TextImageMarquee,
             videoPlayer: VideoPlayer,
-            selectedWorks: SelectedWorks
+            selectedWorks: SelectedWorks,
+            fullWidthVideo: FullWidthVideo,
+            imageDivider: ImageDivider,
         }[layoutName];
 
         return Component ? <Component key={`${props.key}`} {...props}  /> : null;

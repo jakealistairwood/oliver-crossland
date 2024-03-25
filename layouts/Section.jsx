@@ -2,37 +2,43 @@ import React, { memo, useRef, useState, useEffect } from "react";
 import ComponentRenderer from "./ComponentRenderer";
 
 const Section = memo((props) => {
-    const { components = [], remove_container } = props;
+    const { components = [], remove_container, make_sticky, add_rounded_top_border, background_color, padding_top, padding_bottom } = props;
+    console.log(props);
 
     const containerRef = useRef(null);
     const [isIntersecting, setIsIntersecting] = useState(null);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                // Update state based on whether the section is intersecting the viewport
-                setIsIntersecting(entry.isIntersecting);
-            },
-            {
-                root: null,
-                rootMargin: "0px",
-                threshold: 0 // Trigger when section enters viewport
-            }
-        );
+    let containerClasses = [];
 
-        if (containerRef.current) {
-            observer.observe(containerRef.current);
-        }
+    const paddingBottomSizes = {
+        none: "pb-none",
+        "extra-small": "pb-xs",
+        small: "pb-sm",
+        medium: "pb-md",
+        large: "pb-lg",
+    }
 
-        return () => {
-            if (containerRef.current) {
-                observer.unobserve(containerRef.current);
-            }
-        };
-    }, []);
+    const paddingTopSizes = {
+        none: "pt-none",
+        "extra-small": "pt-xs",
+        small: "pt-sm",
+        medium: "pt-md",
+        large: "pt-lg",
+    }
+
+    if (make_sticky) containerClasses.push("sticky top-0");
+    if (add_rounded_top_border) containerClasses.push("rounded-section");
+    if (components[0].component !== "masthead") containerClasses.push("z-[2]");
+
+    const backgroundColors = {
+        offWhite: "bg-offWhite",
+        white: "bg-white",
+        black: "bg-black",
+    }
+
 
     return (
-        <section ref={containerRef} className="bg-white">
+        <section ref={containerRef} className={`relative ${background_color ? `${backgroundColors[background_color]}` : "bg-white"} ${padding_bottom ? paddingBottomSizes[padding_bottom] : ""} ${padding_top ? paddingTopSizes[padding_top] : ""} ${containerClasses.join(" ")}`} style={{ background: "#FFF" }}>
             <div className={remove_container ? "" : "container"}>
                 <ComponentRenderer components={components} />
             </div>

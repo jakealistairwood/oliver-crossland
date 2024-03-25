@@ -1,9 +1,10 @@
 // import { Inter } from 'next/font/google'
-import { manrope, barlowCondenseed } from '@/utils/fonts'
+import { manrope, barlowCondensed, dmMono } from '@/utils/fonts'
 import '../globals.css'
 import SmoothScroll from '@/components/SmoothScroll'
 import ProgressBar from '@/components/globals/ProgressBar'
 import Navbar from '@/components/globals/Navbar'
+import Footer from '@/components/globals/Footer'
 
 // const inter = Inter({subsets: ['latin']})
 // const manrope = Manrope({ subsets: ['latin']})
@@ -18,10 +19,11 @@ export const metadata = {
 export default function RootLayout({children}) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${barlowCondenseed.variable}`}>
-        <ProgressBar />
+      <body className={`${manrope.variable} ${barlowCondensed.variable} ${dmMono.variable}`}>
+        {/* <ProgressBar /> */}
         <Navbar />
         <SmoothScroll>{children}</SmoothScroll>
+        <Footer />
       </body>
     </html>
   )

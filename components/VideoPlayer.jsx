@@ -1,5 +1,6 @@
+import React from "react";
+
 const VideoPlayer = (props) => {
-    console.log(props);
 
     return (
         <div className="overflow-hidden relative">

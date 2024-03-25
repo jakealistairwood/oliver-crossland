@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { motion, useScroll, useSpring } from "framer-motion"
 
 const ProgressBar = () => {

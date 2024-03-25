@@ -45,6 +45,8 @@ export default defineType({
                                     { title: "Scalable Image On Scroll", value: "scalableImageOnScroll" },
                                     { title: "Selected Works", value: "selectedWorks" },
                                     { title: "Text Image Marquee", value: "textImageMarquee" },
+                                    { title: "Full Width Video", value: "fullWidthVideo" },
+                                    { title: "Image Divider", value: "imageDivider" },
                                 ]
                             },
                             initialValue: "",
@@ -84,17 +86,90 @@ export default defineType({
                             type: "textImageMarquee",
                             title: "Text Image Marquee",
                             hidden: ({ parent }) => parent.component!== "textImageMarquee",
+                        },
+                        {
+                            name: "fullWidthVideo",
+                            type: "fullWidthVideo",
+                            title: "Full Width Video",
+                            hidden: ({ parent }) => parent.component!== "fullWidthVideo",
+                        },
+                        {
+                            name: "imageDivider",
+                            type: "imageDivider",
+                            title: "Image Divider",
+                            hidden: ({ parent }) => parent.component!== "imageDivider",
                         }
                     ]
                 }
             ]
         }),
         {
+            name: "background_color",
+            type: "string",
+            title: "Background Color",
+            group: "options",   
+            options: {
+                list: [
+                    { title: "White", value: "white" },
+                    { title: "offWhite", value: "offWhite" },
+                    { title: "Gray", value: "gray" },
+                    { title: "Black", value: "black" },
+                ]
+            },
+            initialValue: "",
+        },
+        {
             name: "remove_container",
             type: "boolean",
             title: "Remove Container?",
             group: "options",
             default: false,
-        }
+        },
+        {
+            name: "make_sticky",
+            type: "boolean",
+            title: "Make Sticky?",
+            group: "options",
+            default: false,
+        },
+        {
+            name : "add_rounded_top_border",
+            type: "boolean",
+            title: "Add Rounded Top Border?",
+            group: "options",
+            default: false,
+        },
+        {
+            name: "padding_top",
+            type: "string",
+            title: "Padding Top",
+            group: "options",   
+            options: {
+                list: [
+                    { title: "None", value: "none" },
+                    { title: "Extra Small", value: "extra-small" },
+                    { title: "Small", value: "small" },
+                    { title: "Medium", value: "medium" },
+                    { title: "Large", value: "large" },
+                ]
+            },
+            initialValue: "",
+        },
+        {
+            name: "padding_bottom",
+            type: "string",
+            title: "Padding Bottom",
+            group: "options",   
+            options: {
+                list: [
+                    { title: "None", value: "none" },
+                    { title: "Extra Small", value: "extra-small" },
+                    { title: "Small", value: "small" },
+                    { title: "Medium", value: "medium" },
+                    { title: "Large", value: "large" },
+                ]
+            },
+            initialValue: "",
+        },
     ]
 })

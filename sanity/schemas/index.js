@@ -7,6 +7,8 @@ import scrollableText from "./scrollableText"
 import scalableImageOnScroll from "./scalableImageOnScroll"
 import selectedWorks from "./selectedWorks"
 import textImageMarquee from "./textImageMarquee"
+import fullWidthVideo from "./fullWidthVideo"
+import imageDivider from "./imageDivider"
 
 export const schemaTypes = [
     page,
@@ -17,5 +19,7 @@ export const schemaTypes = [
     textContent,
     scalableImageOnScroll,
     selectedWorks,
-    textImageMarquee
+    textImageMarquee,
+    fullWidthVideo,
+    imageDivider,
 ]

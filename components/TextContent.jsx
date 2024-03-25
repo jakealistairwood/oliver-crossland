@@ -1,10 +1,11 @@
+import React from 'react'
 import Link from 'next/link'
 
 const TextContent = (props) => {
   const {heading, description, links, add_container, center_content, content_width} = props
 
   let containerClasses = []
-  
+
   if (add_container) {
     containerClasses.push('container')
   }
@@ -19,13 +20,14 @@ const TextContent = (props) => {
 
   return (
     <div
-      className={`flex flex-col pt-32 pb-4  ${containerClasses}`}
+      className={`flex flex-col pb-4  ${containerClasses}`}
       style={{maxWidth: content_width ? `${content_width}px` : ''}}
+      id="text-content"
     >
-      {heading && <h2 className="font-semibold text-3xl">{heading}</h2>}
+      {heading && <h2 className="uppercase text-[8rem] tracking-tighter font-bold">{heading}</h2>}
       {description && (
         <p
-          className="mt-14 text-2xl leading-relaxed tracking-tight opacity-80"
+          className="mt-6 text-[1.8rem] font-light leading-relaxed tracking-tight opacity-80"
           dangerouslySetInnerHTML={{__html: description}}
         />
       )}

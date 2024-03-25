@@ -13,8 +13,14 @@ module.exports = {
       fontFamily: {
         heading: ["Nohemi", "system-ui", "sans-serif"],
       },
+      borderRadius: {
+        '4xl': "40px",
+      },
       colors: {
-        offBlack: '#1a191c'
+        offBlack: '#1a191c',
+        offWhite: "#F6F6F6",
+        fire: "#FD6746",
+        lime: "#D2FF50",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

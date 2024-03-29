@@ -28,17 +28,18 @@ const Section = memo((props) => {
 
     if (make_sticky) containerClasses.push("sticky top-0");
     if (add_rounded_top_border) containerClasses.push("rounded-section");
-    if (components[0].component !== "masthead") containerClasses.push("z-[2]");
+    if (components[0].component === "homeMasthead") containerClasses.push("z-[2]");
 
     const backgroundColors = {
         offWhite: "bg-offWhite",
         white: "bg-white",
         black: "bg-black",
+        navy: "bg-navy",
     }
 
 
     return (
-        <section ref={containerRef} className={`relative ${background_color ? `${backgroundColors[background_color]}` : "bg-white"} ${padding_bottom ? paddingBottomSizes[padding_bottom] : ""} ${padding_top ? paddingTopSizes[padding_top] : ""} ${containerClasses.join(" ")}`} style={{ background: "#FFF" }}>
+        <section ref={containerRef} className={`relative ${backgroundColors[background_color] || "bg-white"} ${padding_bottom ? paddingBottomSizes[padding_bottom] : ""} ${padding_top ? paddingTopSizes[padding_top] : ""} ${containerClasses.join(" ")}`}>
             <div className={remove_container ? "" : "container"}>
                 <ComponentRenderer components={components} />
             </div>

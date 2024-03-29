@@ -133,12 +133,12 @@ const Navbar = () => {
                         </motion.div>
             <Link
               href="/contact"
-              className={`py-3 px-4 rounded-[28px] text-white font-sm backdrop-blur-lg relative overflow-hidden border border-solid ${scrolled ? 'border-lime' : 'border-[#dbd7d7'}`}
+              className={`py-3 px-4 rounded-[28px] text-white font-sm backdrop-blur-lg relative overflow-hidden`}
             >
               <div
-                className={`inset-0 absolute ${scrolled ? 'bg-lime' : 'bg-[#DCD5DB] backdrop-blur-lg opacity-[19%]'} z-[-1]`}
+                className={`inset-0 absolute ${scrolled ? 'bg-lightBlue' : 'bg-lightBlue backdrop-blur-lg'} z-[-1]`}
               />
-              <span className={`${scrolled ? 'text-black' : 'text-white'}`}>
+              <span className="text-navy">
                 Let's Work Together
               </span>
             </Link>

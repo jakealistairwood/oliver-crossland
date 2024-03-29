@@ -9,11 +9,11 @@ const TextImageMarquee = (props) => {
     const itemsToDisplay = [...marquee_items, ...marquee_items, ...marquee_items, ...marquee_items];
 
     return (itemsToDisplay && itemsToDisplay.length > 0) && (
-        <div className="bg-lime py-5">
+        <div className="bg-navy py-8">
             <Marquee loop={0}>
                 {itemsToDisplay?.map((item, i) => (
-                    <div className="flex justify-items-center gap-10" key={`marquee-item-${i}`}>
-                        <span className="uppercase font-bold pl-10 text-4xl">{item?.text}</span>
+                    <div className="flex justify-items-center gap-10 text-lightBlue" key={`marquee-item-${i}`}>
+                        <span className="uppercase font-semibold pl-10 text-4xl">{item?.text}</span>
                         <Image
                             src={urlFor(item?.image).format("webp").url()}
                             alt=""

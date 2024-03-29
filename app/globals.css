@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .font-outline-2 {
+    -webkit-text-stroke: 2px #BCE7FD;
+  }
+  .font-serif {
+    font-family: var(--font-base) !important;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -13,7 +22,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.masthead-marquee-item {
   font-family: var(--font-barlow-condensed);
 }
 

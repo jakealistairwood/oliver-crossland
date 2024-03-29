@@ -1,43 +1,28 @@
-import React, { useState, useEffect } from "react";
-import { motion, useTransform, useMotionValue } from "framer-motion"
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image";
 import { urlFor } from "@/utils/SanityImage";
 
 const ImageDivider = ({ image }) => {
-    const scrollY = useMotionValue(0);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            scrollY.set(window.scrollY);
-        }
 
-        window.addEventListener("scroll", handleScroll)
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"],
+    });
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll)
-        }
-    }, [scrollY]);
-
-    const parallaxValue = useTransform(scrollY, [0, 1], [0, 100]);
+    const y = useTransform(scrollYProgress, [0, 1], [0, -250]);
 
     return (
-        <div className="min-h-screen w-full relative bg-transparent overflow-hidden">
-            <motion.div
-                style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    zIndex: -1,
-                    y: parallaxValue
-                }}
-            >
+        <div className="min-h-[80vh] w-full bg-transparent overflow-hidden relative" ref={containerRef}>
+            <motion.div className="absolute w-full min-h-screen" style={{ y }}>
                 <Image
                     src={urlFor(image).format("webp").url()}
                     fill 
                     alt=""
-                    objectFit="cover"
+                    // objectFit="cover"
+                    className="w-full h-full object-cover"
                 />
             </motion.div>
         </div>

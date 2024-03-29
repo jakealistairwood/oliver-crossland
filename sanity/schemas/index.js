@@ -9,6 +9,8 @@ import selectedWorks from "./selectedWorks"
 import textImageMarquee from "./textImageMarquee"
 import fullWidthVideo from "./fullWidthVideo"
 import imageDivider from "./imageDivider"
+import homeMasthead from "./homeMasthead"
+import logoMarquee from "./logoMarquee"
 
 export const schemaTypes = [
     page,
@@ -22,4 +24,6 @@ export const schemaTypes = [
     textImageMarquee,
     fullWidthVideo,
     imageDivider,
+    homeMasthead,
+    logoMarquee
 ]

@@ -8,14 +8,15 @@ const FullWidthVideo = (props) => {
   const [playVideo, setPlayVideo] = useState(false);
 
   return (
-    <div className="w-full max-w-[1080px] mx-auto rounded-2xl mt-20 pb-0 aspect-[16/9] relative group overflow-hidden cursor-pointer">
+    <div className="w-full max-w-[1180px] mx-auto rounded-2xl mt-20 pb-0 aspect-[16/9] relative group overflow-hidden cursor-pointer">
         <button className="w-full h-full relative" type="button" onClick={() => setPlayVideo(true)}>
             {video_thumbnail ? (
                 playVideo ? (
                     <iframe 
-                        src={`https://www.youtube.com/embed/${video_id}?autoplay=1&muted=1`}
+                        src={`https://www.youtube.com/embed/${video_id}?autohide=1&enablejsapi=1autoplay=1`}
+                        title="showcase reel"
                         allowFullScreen
-                        allow="fullscreen; autoplay"
+                        allow="autoplay; fullscreen"
                         width="100%"
                         height="100%"
                     />
@@ -24,9 +25,10 @@ const FullWidthVideo = (props) => {
                 )
             ) : (
                 <iframe 
-                    src={`https://www.youtube.com/embed/${video_id}?autoplay=1&muted=1`}
+                    src={`https://www.youtube.com/embed/${video_id}?autohide=1&enablejsapi=1autoplay=1`}
+                    title="showcase reel"
                     allowFullScreen
-                    allow="fullscreen; autoplay"
+                    allow="autoplay; fullscreen"
                     width="100%"
                     height="100%"
                 />

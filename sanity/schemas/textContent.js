@@ -16,6 +16,12 @@ const textContent = defineType({
     ],
     fields: [
         {
+            name: "subheading",
+            type: "string",
+            title: "Subheading",
+            group: "content",
+        },
+        {
             name: "heading",
             type: "string",
             title: "Heading",
@@ -82,6 +88,13 @@ const textContent = defineType({
             type: "string",
             title: "Content Width",
             group: "options",
+        },
+        {
+            name: "under_home_masthead_video",
+            type: "boolean",
+            title: "Under Home Masthead Video",
+            group: "options",
+            default: false,
         }
     ],
 })

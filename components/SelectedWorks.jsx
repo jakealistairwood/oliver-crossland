@@ -7,6 +7,7 @@ import { urlFor } from "@/utils/SanityImage";
 import UpRightArrow from "../assets/images/up-right-arrow.svg";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
+import LinkButton from "./elements/LinkButton";
 
 const animationVariant = {
     initial: {
@@ -21,6 +22,11 @@ const animationVariant = {
         y: 10,
         opacity: 0,
     }
+}
+
+const link = {
+    label: "View my complete portfolio",
+    url: "/portfolio",
 }
 
 const SelectedWorks = (props) => {
@@ -52,6 +58,9 @@ const SelectedWorks = (props) => {
                     ))}       
                 </div>
             )}
+            <div className="w-fit mx-auto mt-20">
+                <LinkButton link={link} />
+            </div>
         </div>
     )
 }
@@ -113,8 +122,9 @@ const DefaultProject = (props) => {
                 </motion.div>
             </div>
             <div className="pt-6 flex flex-col items-start justify-between px-4">
-                <div className="flex flex-row items-center justify-between w-full gap-y-4">
-                    <h3 className="text-3xl font-light tracking-widest uppercase text-black">{project?.title}</h3>
+                <div className="flex flex-row items-center justify-start w-full gap-y-4">
+                    {/* <h3 className="text-3xl font-light tracking-widest uppercase text-black">{project?.title}</h3> */}
+                    <h3 className="text-normal font-serif font-bold tracking-widest uppercase text-black">{project?.title}</h3>
                     <div className="flex text-xs items-center font-light text-[#5A5A5A] bg-[#f4f4f4] w-fit font-mono uppercase px-3 py-1 rounded-full">
                         {project?.category}
                     </div>

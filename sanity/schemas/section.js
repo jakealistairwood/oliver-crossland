@@ -40,6 +40,7 @@ export default defineType({
                                 list: [
                                     { title: "Choose component", value: "" },
                                     { title: "Masthead", value: "masthead" },
+                                    { title: "Home Masthead", value: "homeMasthead" },
                                     { title: "Text Content", value: "textContent" },
                                     { title: "Scrollable Text", value: "scrollableText" },
                                     { title: "Scalable Image On Scroll", value: "scalableImageOnScroll" },
@@ -47,6 +48,7 @@ export default defineType({
                                     { title: "Text Image Marquee", value: "textImageMarquee" },
                                     { title: "Full Width Video", value: "fullWidthVideo" },
                                     { title: "Image Divider", value: "imageDivider" },
+                                    { title: "Logo Marquee", value: "logoMarquee" },
                                 ]
                             },
                             initialValue: "",
@@ -56,6 +58,12 @@ export default defineType({
                             type: "masthead",
                             title: "Masthead",
                             hidden: ({ parent }) => parent.component !== "masthead",
+                        },
+                        {
+                            name: "homeMasthead",
+                            type: "homeMasthead",
+                            title: "Home Masthead",
+                            hidden: ({ parent }) => parent.component !== "homeMasthead",
                         },
                         {
                             name: "textContent",
@@ -98,6 +106,12 @@ export default defineType({
                             type: "imageDivider",
                             title: "Image Divider",
                             hidden: ({ parent }) => parent.component!== "imageDivider",
+                        },
+                        {
+                            name: "logoMarquee",
+                            type: "logoMarquee",
+                            title: "Logo Marquee",
+                            hidden: ({ parent }) => parent.component!== "logoMarquee",
                         }
                     ]
                 }
@@ -114,6 +128,7 @@ export default defineType({
                     { title: "offWhite", value: "offWhite" },
                     { title: "Gray", value: "gray" },
                     { title: "Black", value: "black" },
+                    { title: "Navy", value: "navy" },
                 ]
             },
             initialValue: "",

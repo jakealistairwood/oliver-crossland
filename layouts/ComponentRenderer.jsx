@@ -7,7 +7,6 @@ const TextContent = dynamic(() => import("@/components/TextContent"));
 const ScalableImageOnScroll = dynamic(() => import("@/components/ScalableImageOnScroll"));
 const ScrollableText = dynamic(() => import("@/components/ScrollableText"));
 const TextImageMarquee = dynamic(() => import("@/components/TextImageMarquee"));
-const VideoPlayer = dynamic(() => import("@/components/VideoPlayer"));
 const SelectedWorks = dynamic(() => import("@/components/SelectedWorks"));
 const FullWidthVideo = dynamic(() => import("@/components/FullWidthVideo"));
 const ImageDivider = dynamic(() => import("@/components/ImageDivider"));
@@ -22,7 +21,6 @@ const ComponentRenderer = ({ components = [] }) => {
             scalableImageOnScroll: ScalableImageOnScroll,
             scrollableText: ScrollableText,
             textImageMarquee: TextImageMarquee,
-            videoPlayer: VideoPlayer,
             selectedWorks: SelectedWorks,
             fullWidthVideo: FullWidthVideo,
             imageDivider: ImageDivider,

@@ -95,27 +95,27 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex items-center text-white font-medium gap-10">
-            <motion.div 
-                            variants={{
-                                initial: {
-                                    height: "auto",
-                                    width: "auto",
-                                    opacity: 1,
-                                    pointerEvents: "auto",
-                                },
-                                hide: {
-                                    height: 0,
-                                    width: 0,
-                                    opacity: 0,
-                                    pointerEvents: "none"
-                                }
-                            }} 
-                            initial="initial" 
-                            transition={{
-                                duration: 0.3,
-                            }}
-                            animate={controls}
-                            className="flex items-center gap-2"
+            <div 
+                            // variants={{
+                            //     initial: {
+                            //         height: "auto",
+                            //         width: "auto",
+                            //         opacity: 1,
+                            //         pointerEvents: "auto",
+                            //     },
+                            //     hide: {
+                            //         height: 0,
+                            //         width: 0,
+                            //         opacity: 0,
+                            //         pointerEvents: "none"
+                            //     }
+                            // }} 
+                            // initial="initial" 
+                            // transition={{
+                            //     duration: 0.3,
+                            // }}
+                            // animate={controls}
+                            className={`${scrolled ? "hidden" : "flex"} items-center gap-2`}
                         >
                             <svg
                                 width="12"
@@ -130,7 +130,7 @@ const Navbar = () => {
                                 />
                             </svg>
                             <span>Available For Projects</span>
-                        </motion.div>
+                        </div>
             <Link
               href="/contact"
               className={`py-3 px-4 rounded-[28px] text-white font-sm backdrop-blur-lg relative overflow-hidden`}

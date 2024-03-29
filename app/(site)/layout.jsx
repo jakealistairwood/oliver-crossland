@@ -1,8 +1,8 @@
+import React from 'react'
 // import { Inter } from 'next/font/google'
 import { manrope, barlowCondensed, dmMono } from '@/utils/fonts'
 import '../globals.css'
 import SmoothScroll from '@/components/SmoothScroll'
-import ProgressBar from '@/components/globals/ProgressBar'
 import Navbar from '@/components/globals/Navbar'
 import Footer from '@/components/globals/Footer'
 
@@ -20,7 +20,6 @@ export default function RootLayout({children}) {
   return (
     <html lang="en">
       <body className={`${manrope.variable} ${barlowCondensed.variable} ${dmMono.variable}`}>
-        {/* <ProgressBar /> */}
         <Navbar />
         <SmoothScroll>{children}</SmoothScroll>
         <Footer />

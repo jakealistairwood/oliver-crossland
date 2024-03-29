@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import LayoutRenderer from "@/layouts/LayoutRenderer";
 
 const Homepage = (props) => {

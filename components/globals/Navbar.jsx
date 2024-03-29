@@ -139,7 +139,7 @@ const Navbar = () => {
                 className={`inset-0 absolute ${scrolled ? 'bg-lightBlue' : 'bg-lightBlue backdrop-blur-lg'} z-[-1]`}
               />
               <span className="text-navy">
-                Let's Work Together
+                Let&apos;s Work Together
               </span>
             </Link>
           </div>

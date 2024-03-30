@@ -20,6 +20,21 @@ export const fetchHomepageData = async () => {
     );
 }
 
+export const fetchPortfolioPageData = async () => {
+    return createClient(clientConfig).fetch(
+        groq`*[_type == "page" && slug.current == "/portfolio"]{
+            _id,
+            "slug": slug.current,
+            sections[]{
+                ...,
+                components[]{
+                  ...,
+                }
+            }
+        }[0]`
+    );
+}
+
 export const fetchPages = async () => {
     return createClient(clientConfig).fetch(
         groq`*[_type == "page"]{

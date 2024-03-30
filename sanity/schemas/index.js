@@ -12,6 +12,7 @@ import fullWidthVideo from "./fullWidthVideo"
 import imageDivider from "./imageDivider"
 import homeMasthead from "./homeMasthead"
 import logoMarquee from "./logoMarquee"
+import portfolioList from "./portfolioList"
 
 export const schemaTypes = [
     page,
@@ -27,5 +28,6 @@ export const schemaTypes = [
     fullWidthVideo,
     imageDivider,
     homeMasthead,
-    logoMarquee
+    logoMarquee,
+    portfolioList,
 ]

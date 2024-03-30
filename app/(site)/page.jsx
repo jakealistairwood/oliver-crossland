@@ -8,7 +8,7 @@ export default async function Home() {
   const portfolio = await fetchPortolio();
   return (
     <main className="">
-        <Homepage data={data} portfolio={portfolio} />
+        <Homepage data={data} />
     </main>
   );
 }

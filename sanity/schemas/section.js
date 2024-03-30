@@ -49,6 +49,7 @@ export default defineType({
                                     { title: "Full Width Video", value: "fullWidthVideo" },
                                     { title: "Image Divider", value: "imageDivider" },
                                     { title: "Logo Marquee", value: "logoMarquee" },
+                                    { title: "Portfolio List", value: "portfolioList" },
                                 ]
                             },
                             initialValue: "",
@@ -112,6 +113,12 @@ export default defineType({
                             type: "logoMarquee",
                             title: "Logo Marquee",
                             hidden: ({ parent }) => parent.component!== "logoMarquee",
+                        },
+                        {
+                            name: "portfolioList",
+                            type: "portfolioList",
+                            title: "Portfolio List",
+                            hidden: ({ parent }) => parent.component!== "portfolioList",
                         }
                     ]
                 }

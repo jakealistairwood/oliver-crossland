@@ -6,10 +6,6 @@ import SmoothScroll from '@/components/SmoothScroll'
 import Navbar from '@/components/globals/Navbar'
 import Footer from '@/components/globals/Footer'
 
-// const inter = Inter({subsets: ['latin']})
-// const manrope = Manrope({ subsets: ['latin']})
-// const barlowCondensed = Barlow_Condensed({ subsets: ['latin'], weight: ['500', '700'] })
-
 export const metadata = {
   title: 'Oli Crossland Videography',
   description:

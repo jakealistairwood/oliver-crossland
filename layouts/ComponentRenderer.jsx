@@ -3,6 +3,8 @@
 import dynamic from "next/dynamic";
 import Masthead from "@/components/Masthead";
 import HomeMasthead from "@/components/mastheads/HomeMasthead";
+import PortfolioList from "@/components/PortfolioList";
+import portfolio from "@/sanity/schemas/portfolio";
 const TextContent = dynamic(() => import("@/components/TextContent"));
 const ScalableImageOnScroll = dynamic(() => import("@/components/ScalableImageOnScroll"));
 const ScrollableText = dynamic(() => import("@/components/ScrollableText"));
@@ -12,11 +14,12 @@ const FullWidthVideo = dynamic(() => import("@/components/FullWidthVideo"));
 const ImageDivider = dynamic(() => import("@/components/ImageDivider"));
 const LogoMarquee = dynamic(() => import("@/components/marquees/LogoMarquee"));
 
-const ComponentRenderer = ({ components = [] }) => {
+const ComponentRenderer = ({ components = [], portfolio }) => {
     const renderComponent = (layoutName, props) => {
         const Component = {
             masthead: Masthead,
             homeMasthead: HomeMasthead,
+            portfolioList: PortfolioList,
             textContent: TextContent,
             scalableImageOnScroll: ScalableImageOnScroll,
             scrollableText: ScrollableText,
@@ -27,7 +30,7 @@ const ComponentRenderer = ({ components = [] }) => {
             logoMarquee: LogoMarquee,
         }[layoutName];
 
-        return Component ? <Component key={`${props.key}`} {...props}  /> : null;
+        return Component ? <Component key={`${props.key}`} {...props} portfolio={portfolio}  /> : null;
     }
 
     return (

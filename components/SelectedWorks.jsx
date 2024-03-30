@@ -48,7 +48,7 @@ const SelectedWorks = (props) => {
                 {description && <p className="max-w-[680px] opacity-80 text-lg">{description}</p>}
             </header>
             {featured_projects && featured_projects.length > 0 && (
-                <div className="grid grid-cols-12 gap-x-5 gap-y-20 pt-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-20 pt-24">
                     {featured_projects?.map((project, i) => (
                         project?.make_featured ? (
                             <FeaturedProject key={`project-${i}`} project={project} />
@@ -110,7 +110,7 @@ const DefaultProject = (props) => {
     }
 
     return (
-        <div className="col-span-6 cursor-pointer group" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        <div className="cursor-pointer group" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             <div className="overflow-hidden aspect-[580/322] relative">
                 <Image className="scale-100 duration-300 ease group-hover:scale-105 group-hover:blur-sm" objectFit="cover" src={urlFor(project?.featured_image).format("webp").url()} alt={`${project?.title} Thumbnail`} fill />
                 <motion.div variants={animationVariant} initial="initial" animate={isHovered ? "visible" : "initial"} className="absolute z-[3] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">

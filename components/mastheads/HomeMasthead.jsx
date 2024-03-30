@@ -10,7 +10,7 @@ const HomeMasthead = (props) => {
   const {marquee, heading, link, video_embed, video_thumbnail, background_asset} = props
 
   return (
-    <header className="min-h-screen w-full">
+    <header className="min-h-[110vh] w-full">
       <div className="marquee-container min-h-[240px]">
         {marquee && marquee.length > 0 && (
           <Marquee>

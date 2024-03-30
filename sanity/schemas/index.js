@@ -1,5 +1,6 @@
 import page from "./page"
 import section from "./section"
+import globalOptions from "./globalOptions"
 import portfolio from "./portfolio"
 import masthead from "./masthead"
 import textContent from "./textContent"
@@ -15,6 +16,7 @@ import logoMarquee from "./logoMarquee"
 export const schemaTypes = [
     page,
     section,
+    globalOptions,
     portfolio,
     masthead,
     scrollableText,

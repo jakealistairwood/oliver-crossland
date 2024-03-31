@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchPortolio } from "@/sanity/sanity-api";
 import Image from "next/image";
+import Link from "next/link";
 import { urlFor } from "@/utils/SanityImage";
 import UpRightArrow from "../assets/images/up-right-arrow.svg";
 import { motion } from "framer-motion";
@@ -110,7 +111,7 @@ const DefaultProject = (props) => {
     }
 
     return (
-        <div className="cursor-pointer group" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        <Link href={`/portfolio/${project?.slug.current}` || ""} className="cursor-pointer group" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             <div className="overflow-hidden aspect-[580/322] relative">
                 <Image className="scale-100 duration-300 ease group-hover:scale-105 group-hover:blur-sm" objectFit="cover" src={urlFor(project?.featured_image).format("webp").url()} alt={`${project?.title} Thumbnail`} fill />
                 <motion.div variants={animationVariant} initial="initial" animate={isHovered ? "visible" : "initial"} className="absolute z-[3] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
@@ -131,6 +132,6 @@ const DefaultProject = (props) => {
                 </div>
                 <p className="font-light text-sm mt-4 max-w-[640px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, veniam. Facere quos rerum, numquam saepe alias nihil voluptas aperiam mollitia sequi iure eaque ad voluptate consequatur a impedit dolor doloremque.</p>
             </div>
-        </div>
+        </Link>
     )
 }

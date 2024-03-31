@@ -18,7 +18,9 @@ const Navbar = () => {
 
   const pathname = usePathname();
 
-  const isLight = pathname === "/portfolio";
+  console.log(pathname);
+
+  const isLight = pathname.includes("/portfolio");
 
   useEffect(() => {
     const handleScroll = () => {

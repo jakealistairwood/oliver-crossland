@@ -33,7 +33,7 @@ const FooterWrapper = ({data, site_pages}) => {
           <div className="max-w-[137px] w-full relative">
             <Image src={Logo} alt="" width={137} height={29} objectFit="cover" />
           </div>
-          <div className="flex flex-col mt-[140px]">
+          <div className="flex flex-col mt-[60px] md:mt-[140px]">
             {social_links && social_links.length > 0 && (
               <div className="flex items-center gap-4">
                 {social_links?.map((link, i) => (
@@ -45,7 +45,7 @@ const FooterWrapper = ({data, site_pages}) => {
             )}
           </div>
         </div>
-        <div className="md:col-span-4">
+        <div className="mt-[60px] md:mt-0 md:col-span-4">
           <nav className="flex justify-between w-full">
             <div className="flex flex-col gap-y-8">
               <p className="">Site</p>
@@ -101,7 +101,7 @@ const FooterWrapper = ({data, site_pages}) => {
           </nav>
         </div>
       </div>
-      <div className="flex items-center justify-between w-full pb-10 pt-20">
+      <div className="flex flex-col md:flex-row gap-y-4 items-left md:items-center justify-between w-full pb-10 pt-20">
         <small className="opacity-60 font-extralight">
           &copy; Oliver Crossland Videography {currentYear}
         </small>

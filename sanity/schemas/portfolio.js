@@ -26,11 +26,20 @@ const portfolio = defineType({
             description: "This is a basically a summary of the project.",
         },
         {
-            name: "make_featured",
-            title: "Make Featured",
-            type: "boolean",
-            description: "On the selected works/portfolio page, the thumbnail will span the full width",
-            initialValue: false,
+            name: "description",
+            title: "Description",
+            type: "text",
+            description: "More detailed overview of the project, e.g. what it involves, the challenges, techniques used etc",
+        },
+        {
+            name: "category",
+            title: "Category",
+            type: "string",
+        },
+        {
+            name: "date",
+            title: "Date",
+            type: "date",
         },
         {
             name: "featured_image",
@@ -41,24 +50,9 @@ const portfolio = defineType({
             },
         },
         {
-            name: "category",
-            title: "Category",
+            name: "video_id",
+            title: "Video ID",
             type: "string",
-            options: {
-                list: [
-                  { title: "Wildlife", value: "wildlife" },
-                  { title: "Online Course", value: "online_course" },
-                  { title: "Wedding", value: "wedding" },
-                  { title: "Advert", value: "advert" },
-                  { title: "Music Video", value: "music_video" },
-                  { title: "Other", value: "other" },
-                ],
-              },
-        },
-        {
-            name: "date",
-            title: "Date",
-            type: "date",
         }
     ]
 });

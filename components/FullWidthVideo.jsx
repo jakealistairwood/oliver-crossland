@@ -8,7 +8,7 @@ const FullWidthVideo = (props) => {
   const [playVideo, setPlayVideo] = useState(false);
 
   return (
-    <div className="w-full max-w-[1180px] mx-auto rounded-2xl mt-20 pb-0 aspect-[16/9] relative group overflow-hidden cursor-pointer">
+    <div className="w-full max-w-[1180px] mx-auto rounded-2xl pb-0 aspect-[16/9] relative group overflow-hidden cursor-pointer">
         <button className="w-full h-full relative" type="button" onClick={() => setPlayVideo(true)}>
             {video_thumbnail ? (
                 playVideo ? (

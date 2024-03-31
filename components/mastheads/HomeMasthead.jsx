@@ -39,7 +39,7 @@ const HomeMasthead = (props) => {
                 <LinkButton link={link} />
             )}
         </div>
-        <div className="home-masthead-asset relative">
+        <div className="home-masthead-asset relative mt-20">
             {video_embed && video_embed.length > 0 && (
                 <div className="absolute top-0 left-0 right-0" id="home-masthead-video">
                     <FullWidthVideo video_thumbnail={video_thumbnail} video_id={video_embed} />

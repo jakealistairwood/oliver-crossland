@@ -20,7 +20,7 @@ const ProjectPost = ({ project }) => {
                 )}
             </div>
             {description && description.length > 0 && (
-                <p dangerouslySetInnerHTML={{ __html: description }} />
+                <p className="max-w-[880px] mx-auto text-2xl font-serif" dangerouslySetInnerHTML={{ __html: description }} />
             )}
         </>
     )

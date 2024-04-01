@@ -62,7 +62,7 @@ body {
 }
 
 .pb-md {
-  @apply pb-32;
+  @apply pb-20 md:pb-32;
 }
 
 .pt-xs {
@@ -74,7 +74,7 @@ body {
 }
 
 .pt-md {
-  @apply pt-32;
+  @apply pt-20 md:pt-32;
 }
 
 .bg-offWhite {

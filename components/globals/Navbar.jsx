@@ -10,6 +10,7 @@ import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const containerControls = useAnimation()
   const controls = useAnimation()
@@ -52,8 +53,24 @@ const Navbar = () => {
   }, [scrolled])
 
   return width < 1080 ? (
-    <header className="">
-        <Logo scrolled={false} />
+    <header className="w-full">
+        <div className="container sticky top-0 bg-navy w-full">
+            <div className="w-full flex items-center justify-between py-4">
+                <Link className={`${scrolled || isLight ? 'text-black' : 'text-white'}`} href="/">
+                    <Logo scrolled={scrolled} isLight={isLight} />
+                </Link>
+                <button className="flex flex-col items-center justify-center gap-y-2 p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} type="button">
+                    <div className="h-[1px] w-[30px] bg-white" />
+                    <div className="h-[1px] w-[30px] bg-white" />
+                    <div className="h-[1px] w-[30px] bg-white" />
+                </button>
+                {mobileMenuOpen && (
+                    <div className="fixed inset-0 bg-white">
+                        
+                    </div>
+                )}
+            </div>
+        </div>
     </header>
   ) : (
     <motion.header

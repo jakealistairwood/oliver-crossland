@@ -11,7 +11,7 @@ const LogoMarquee = (props) => {
     const extendedLogos = [...logos, ...logos, ...logos, ...logos];
 
     return (
-        <div className="bg-paleSkyBlue max-w-[1180px] mx-auto rounded-[20px] flex flex-col items-center text-center p-10 gap-10 mt-[90px] overflow-hidden">
+        <div className="bg-paleSkyBlue max-w-[1180px] mx-auto rounded-[20px] flex flex-col items-center text-center p-10 gap-10 mt-16 md:mt-[90px] overflow-hidden">
             {heading && heading.length > 0 && <p dangerouslySetInnerHTML={{ __html: heading }} />}
             {logos && logos.length > 0 && (
                 <Marquee pauseOnHover direction="right" speed={10} loop={0} gradient gradientColor="#F0F9FD">

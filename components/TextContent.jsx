@@ -19,7 +19,7 @@ const TextContent = (props) => {
   }
 
   if(under_home_masthead_video) {
-    containerClasses.push('pt-[400px]')
+    containerClasses.push('md:pt-[400px]')
   }
 
   containerClasses = containerClasses.join(' ')
@@ -30,16 +30,16 @@ const TextContent = (props) => {
       style={{maxWidth: content_width ? `${content_width}px` : ''}}
       id="text-content"
     >
-      {subheading && subheading.length > 0 && <div className="bg-ivory text-slateGrey w-fit px-3 py-[6px] mx-auto rounded-full flex items-center uppercase">{subheading}</div>}
+      {subheading && subheading.length > 0 && <div className="bg-ivory text-slateGrey text-[0.8rem] md:text-normal w-fit px-3 py-[6px] mx-auto rounded-full flex items-center uppercase">{subheading}</div>}
       {heading && <h2 className="uppercase text-[8rem] tracking-tighter font-bold">{heading}</h2>}
       {description && (
         <p
-          className="mt-6 text-[2rem] font-light leading-relaxed tracking-tight opacity-80"
+          className="mt-6 text-[1.5rem] md:text-[2rem] font-light leading-relaxed tracking-tight opacity-80"
           dangerouslySetInnerHTML={{__html: description}}
         />
       )}
       {links && (
-        <div className={`flex items-center mt-10 ${center_content ? "justify-center mx-auto" : ""}`}>
+        <div className={`flex items-center md:mt-10 ${center_content ? "justify-center mx-auto" : ""}`}>
           {links?.map((link, i) => {
             return (
                 <LinkButton link={link} />

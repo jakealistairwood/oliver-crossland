@@ -8,7 +8,7 @@ const FullWidthVideo = (props) => {
   const [playVideo, setPlayVideo] = useState(false);
 
   return (
-    <div className="w-full max-w-[1180px] mx-auto rounded-2xl pb-0 aspect-[16/9] relative group overflow-hidden cursor-pointer">
+    <div className="w-full max-w-[1180px] mx-auto rounded-lg md:rounded-2xl pb-0 aspect-[16/9] relative group overflow-hidden cursor-pointer">
         <button className="w-full h-full relative" type="button" onClick={() => setPlayVideo(true)}>
             {video_thumbnail ? (
                 playVideo ? (
@@ -38,8 +38,9 @@ const FullWidthVideo = (props) => {
          playVideo ? (
             null
          ) : (
-            <button type="button" onClick={() => setPlayVideo(true)} className="absolute z-[10] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] rounded-full bg-white/[12%] backdrop-blur-lg flex items-center justify-center">
+            <button type="button" onClick={() => setPlayVideo(true)} className="absolute z-[10] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50px] h-[50px] md:w-[100px] md:h-[100px] rounded-full bg-white/[12%] backdrop-blur-lg flex items-center justify-center">
                 <svg
+                className="w-[15px] h-[25px] md:w-[28px] md:h-[33px]"
                 width="28"
                 height="33"
                 viewBox="0 0 28 33"
@@ -69,7 +70,7 @@ const VideoThumbnail = ({ video_thumbnail }) => {
             fill
             alt="showreel video"
             objectFit="cover"
-            className="rounded-2xl duration-200 ease-linear transition-transform group-hover:scale-[1.05]"
+            className="rounded-lg md:rounded-2xl duration-200 ease-linear transition-transform group-hover:scale-[1.05]"
             />
         </>
     )

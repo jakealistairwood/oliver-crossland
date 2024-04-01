@@ -16,7 +16,17 @@ module.exports = {
         sm: "1.5rem",
         md: "2rem",
         xl: "0",
+      },
+      maxWidth: {
+        sm: "100%"
       }
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
     extend: {
       borderRadius: {

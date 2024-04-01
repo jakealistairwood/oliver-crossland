@@ -15,9 +15,9 @@ const PortfolioList = (props) => {
 
     return (
         <>
-            <header className="flex flex-col items-center text-center pt-[140px] pb-20">
-                <h1 className="uppercase text-[8rem] tracking-tighter font-bold" dangerouslySetInnerHTML={{ __html: heading }} />
-                <p className="max-w-[680px] opacity-80 text-lg" dangerouslySetInnerHTML={{ __html: description }} />
+            <header className="flex flex-col items-center text-center pt-[80px] md:pt-[140px] pb-20">
+                <h1 className="uppercase text-[5rem] leading-none md:text-[8rem] tracking-tighter font-bold" dangerouslySetInnerHTML={{ __html: heading }} />
+                <p className="max-w-[680px] mt-10 md:mt-0 opacity-80 text-normal md:text-lg font-serif" dangerouslySetInnerHTML={{ __html: description }} />
             </header>
             {portfolio && portfolio.length > 0 && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-20 pb-[140px]">
@@ -66,11 +66,11 @@ const DefaultProject = (props) => {
                     </Marquee>
                 </motion.div>
             </div>
-            <div className="pt-6 flex flex-col items-start justify-between px-4">
-                <div className="flex flex-row items-center justify-start w-full gap-y-4">
+            <div className="pt-6 flex flex-col items-start justify-between md:px-4">
+                <div className="flex flex-col-reverse md:flex-row items-left md:items-center justify-between w-full gap-y-4">
                     {/* <h3 className="text-3xl font-light tracking-widest uppercase text-black">{project?.title}</h3> */}
                     <h3 className="text-normal font-serif font-bold tracking-widest uppercase text-black">{project?.title}</h3>
-                    <div className="flex text-xs items-center font-light text-[#5A5A5A] bg-[#f4f4f4] w-fit font-mono uppercase px-3 py-1 rounded-full">
+                    <div className="flex text-[0.6rem] md:text-xs items-center font-light text-[#5A5A5A] bg-[#f4f4f4] w-fit font-mono uppercase px-3 py-1 rounded-full">
                         {project?.category}
                     </div>
                 </div>

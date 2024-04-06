@@ -36,6 +36,7 @@ module.exports = {
       colors: {
         offBlack: '#1a191c',
         offWhite: "#F6F6F6",
+        frostWhite: "#EFF5F8",
         ivory: "#F5F9FA",
         fire: "#FD6746",
         lime: "#D2FF50",

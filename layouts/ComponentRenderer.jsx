@@ -13,6 +13,7 @@ const SelectedWorks = dynamic(() => import("@/components/SelectedWorks"));
 const FullWidthVideo = dynamic(() => import("@/components/FullWidthVideo"));
 const ImageDivider = dynamic(() => import("@/components/ImageDivider"));
 const LogoMarquee = dynamic(() => import("@/components/marquees/LogoMarquee"));
+const ThreeColGridItems = dynamic(() => import("@/components/ThreeColGridItems"));
 
 const ComponentRenderer = ({ components = [], portfolio }) => {
     const renderComponent = (layoutName, props) => {
@@ -28,6 +29,7 @@ const ComponentRenderer = ({ components = [], portfolio }) => {
             fullWidthVideo: FullWidthVideo,
             imageDivider: ImageDivider,
             logoMarquee: LogoMarquee,
+            threeColGridItems: ThreeColGridItems,
         }[layoutName];
 
         return Component ? <Component key={`${props.key}`} {...props} portfolio={portfolio}  /> : null;

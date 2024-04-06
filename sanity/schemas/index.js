@@ -13,6 +13,7 @@ import imageDivider from "./imageDivider"
 import homeMasthead from "./homeMasthead"
 import logoMarquee from "./logoMarquee"
 import portfolioList from "./portfolioList"
+import threeColGridItems from "./threeColGridItems"
 
 export const schemaTypes = [
     page,
@@ -30,4 +31,5 @@ export const schemaTypes = [
     homeMasthead,
     logoMarquee,
     portfolioList,
+    threeColGridItems
 ]

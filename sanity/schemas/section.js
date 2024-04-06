@@ -50,6 +50,7 @@ export default defineType({
                                     { title: "Image Divider", value: "imageDivider" },
                                     { title: "Logo Marquee", value: "logoMarquee" },
                                     { title: "Portfolio List", value: "portfolioList" },
+                                    { title: "Three Col Grid Items", value: "threeColGridItems" },
                                 ]
                             },
                             initialValue: "",
@@ -119,6 +120,12 @@ export default defineType({
                             type: "portfolioList",
                             title: "Portfolio List",
                             hidden: ({ parent }) => parent.component!== "portfolioList",
+                        },
+                        {
+                            name: "threeColGridItems",
+                            type: "threeColGridItems",
+                            title: "Three Col Grid Items",
+                            hidden: ({ parent }) => parent.component!== "threeColGridItems",
                         }
                     ]
                 }

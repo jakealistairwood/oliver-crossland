@@ -119,11 +119,11 @@ const Navbar = () => {
               </li>
               <li>
                 {/* <Link href="/about">Services</Link> */}
-                <NavLink href="/about" label="Services" isLight={isLight} />
+                <NavLink link="/about" label="Services" isLight={isLight} />
               </li>
               <li>
                 {/* <Link href="/portfolio">Portfolio</Link> */}
-                <NavLink href="/portfolio" label="Portfolio" isLight={isLight} />
+                <NavLink link="/portfolio" label="Portfolio" isLight={isLight} />
               </li>
             </ul>
           </div>

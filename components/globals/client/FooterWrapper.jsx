@@ -30,9 +30,9 @@ const FooterWrapper = ({data, site_pages}) => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-12">
         <div className="md:col-span-8 flex flex-col">
-          <div className="max-w-[137px] w-full relative">
+          <Link href="/" aria-label="Go to Homepage" className="max-w-[137px] w-full relative">
             <Image src={Logo} alt="" width={137} height={29} objectFit="cover" />
-          </div>
+          </Link>
           <div className="flex flex-col mt-[60px] md:mt-[140px]">
             {social_links && social_links.length > 0 && (
               <div className="flex items-center gap-4">

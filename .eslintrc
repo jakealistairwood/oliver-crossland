@@ -1,3 +1,7 @@
 {
-  "extends": "@sanity/eslint-config-studio"
+  "extends": [
+    "@sanity/eslint-config-studio",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": ["jsx-a11y"]
 }

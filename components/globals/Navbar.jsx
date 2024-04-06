@@ -19,8 +19,6 @@ const Navbar = () => {
 
   const pathname = usePathname();
 
-  console.log(pathname);
-
   const isLight = pathname.includes("/portfolio");
 
   useEffect(() => {
@@ -56,7 +54,7 @@ const Navbar = () => {
     <header className="w-full">
         <div className="container sticky top-0 bg-navy w-full">
             <div className="w-full flex items-center justify-between py-4">
-                <Link className={`${scrolled || isLight ? 'text-black' : 'text-white'}`} href="/">
+                <Link className={`${scrolled || isLight ? 'text-black' : 'text-white'}`} href="/" aria-label="Go to Homepage">
                     <Logo scrolled={scrolled} isLight={isLight} />
                 </Link>
                 <button className="flex flex-col items-center justify-center gap-y-2 p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} type="button">
@@ -101,7 +99,7 @@ const Navbar = () => {
         // ease: [0.6, 0.01, -0.05, 1],
         ease: 'easeInOut',
       }}
-      className={`fixed flex justify-center left-1/2 -translate-x-1/2 items-center w-full z-[99] py-2 mt-2`}
+      className={`fixed flex justify-center left-1/2 -translate-x-1/2 ${isLight && "bg-white/70 backdrop-blur-lg"} items-center w-full z-[99] py-2 mt-2`}
     >
       <div className="container">
         <nav className="flex items-center w-full justify-between">

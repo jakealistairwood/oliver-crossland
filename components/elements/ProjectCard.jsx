@@ -1,45 +1,12 @@
-"use client";
-
-import React, { useState, useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/utils/SanityImage";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Marquee from "react-fast-marquee";
 
-const DynamicProjectCard = dynamic(() => import("./elements/ProjectCard"));
-
-const PortfolioList = (props) => {
-    console.log(props);
-    const { heading, description, portfolio } = props;
-
-    console.log(portfolio);
-
-    return (
-        <>
-            <header className="flex flex-col items-center text-center pt-[80px] md:pt-[140px] pb-20">
-                <h1 className="uppercase text-[5rem] leading-none md:text-[8rem] tracking-tighter font-bold" dangerouslySetInnerHTML={{ __html: heading }} />
-                <p className="max-w-[680px] mt-10 md:mt-6 opacity-80 text-normal md:text-lg font-serif" dangerouslySetInnerHTML={{ __html: description }} />
-            </header>
-            {portfolio && portfolio.length > 0 && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-20 pb-[140px]">
-                    {portfolio?.map((project, i) => (
-                        // <DefaultProject key={`project-${i}`} index={i} project={project} />
-                        <DynamicProjectCard key={`project-${i}`} index={i} project={project} />
-                    ))}       
-                </div>
-            )}
-        </>
-    )
-}
-
-export default PortfolioList
-
-const DefaultProject = (props) => {
+const ProjectCard = (props) => {
     const { project, index } = props;
-
-    console.log(project);
 
     const [isHovered, setIsHovered] = useState(false);
     const caseStudyText = "View Case Study";
@@ -57,20 +24,7 @@ const DefaultProject = (props) => {
             controls.start("fadeIn");
         }
     }, [controls, isInView]);
-
-    // const textVariants = {
-    //     hidden: { opacity: 0, y: 50 },
-    //     visible: (custom) => ({
-    //       opacity: 1,
-    //       y: 0,
-    //       transition: {
-    //         duration: 0.5, // Adjust the transition duration as needed
-    //         delay: custom % 2 === 0 ? custom * 0.1 : custom * 0.2 // Alternating delays for odd and even indexes
-    //       }
-    //     })
-    //   };
-      
-
+    
     const fadeInProject = {
         initial: {
             opacity: 0,
@@ -82,7 +36,6 @@ const DefaultProject = (props) => {
             transition: {
                 duration: 0.5,
                 delay: custom % 2 === 0 ? 0.1 : 0.3 
-                // delay: custom * 0.2
             },
         })
     }
@@ -105,7 +58,6 @@ const DefaultProject = (props) => {
                 <div className="overflow-hidden aspect-[580/322] relative">
                     <Image 
                         className="scale-100 duration-300 ease group-hover:scale-105 group-hover:blur-sm object-cover" 
-                        // objectFit="cover" 
                         src={urlFor(project?.featured_image).format("webp").url()} 
                         alt={`${project?.title} Thumbnail`} 
                         fill 
@@ -133,3 +85,5 @@ const DefaultProject = (props) => {
         </motion.div>
     )
 }
+
+export default ProjectCard;

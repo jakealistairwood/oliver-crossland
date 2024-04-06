@@ -38,7 +38,7 @@ const FullWidthVideo = (props) => {
          playVideo ? (
             null
          ) : (
-            <button type="button" onClick={() => setPlayVideo(true)} className="absolute z-[10] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50px] h-[50px] md:w-[100px] md:h-[100px] rounded-full bg-white/[12%] backdrop-blur-lg flex items-center justify-center">
+            <button type="button" onClick={() => setPlayVideo(true)} aria-label="Play Video" className="absolute z-[10] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50px] h-[50px] md:w-[100px] md:h-[100px] rounded-full bg-white/[12%] backdrop-blur-lg flex items-center justify-center">
                 <svg
                 className="w-[15px] h-[25px] md:w-[28px] md:h-[33px]"
                 width="28"

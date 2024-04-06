@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Marquee from 'react-fast-marquee'
 import Link from 'next/link'
 import {motion} from 'framer-motion'
@@ -9,21 +9,31 @@ import AnimatedText from '../AnimatedText'
 const HomeMasthead = (props) => {
   const {marquee, heading, link, video_embed, video_thumbnail, background_asset} = props
 
+  const [marqueeLoaded, setMarqueeLoaded] = useState(false);
+
+  useEffect(() => {
+    setMarqueeLoaded(true);
+  }, []);
+
   return (
     <header className="md:min-h-[110vh] w-full pb-20 md:pb-0">
-      <div className="marquee-container min-h-[240px]">
-        {marquee && marquee.length > 0 && (
-          <Marquee>
-            {marquee.map((item, i) => (
-              <div
-                className="text-transparent font-bold text-[8rem] md:text-[16rem] font-outline-2 uppercase masthead-marquee-item pr-8"
-                key={`home-masthead-marquee-item-${i}`}
-                dangerouslySetInnerHTML={{__html: item?.text}}
-              />
-            ))}
-          </Marquee>
-        )}
-      </div>
+        <div className="min-h-[380px]">
+            {marqueeLoaded && (
+                <div className="marquee-container">
+                    {marquee && marquee.length > 0 && (
+                        <Marquee>
+                            {marquee.map((item, i) => (
+                            <div
+                                className="text-transparent font-bold text-[8rem] md:text-[16rem] font-outline-2 uppercase masthead-marquee-item pr-8"
+                                key={`home-masthead-marquee-item-${i}`}
+                                dangerouslySetInnerHTML={{__html: item?.text}}
+                            />
+                            ))}
+                        </Marquee>
+                    )}
+                </div>
+            )}
+        </div>
       <div className="container">
         <div className="flex flex-col items-center text-center max-w-[620px] mx-auto">
             {heading && heading.length > 0 && (

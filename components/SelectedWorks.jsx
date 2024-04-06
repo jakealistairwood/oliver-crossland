@@ -1,29 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { fetchPortolio } from "@/sanity/sanity-api";
-import Image from "next/image";
-import Link from "next/link";
-import { urlFor } from "@/utils/SanityImage";
-import UpRightArrow from "../assets/images/up-right-arrow.svg";
-import { motion } from "framer-motion";
-import Marquee from "react-fast-marquee";
+import React from "react";
+import dynamic from "next/dynamic";
 import LinkButton from "./elements/LinkButton";
 
-const animationVariant = {
-    initial: {
-        y: 10,
-        opacity: 0,
-    },
-    visible: {
-        y: 0,
-        opacity: 1,
-    },
-    exit: {
-        y: 10,
-        opacity: 0,
-    }
-}
+const DynamicProjectCard = dynamic(() => import("./elements/ProjectCard"));
 
 const link = {
     label: "View my complete portfolio",
@@ -32,15 +13,6 @@ const link = {
 
 const SelectedWorks = (props) => {
     const { section_title, description, featured_projects } = props;
-    // const [portfolio, setPortfolio] = useState([]);
-
-    // useEffect(() => {
-    //     const getPortfolioData = async () => {
-    //         const data = await fetchPortolio();
-    //         setPortfolio(data);
-    //     }
-    //     getPortfolioData();
-    // }, []);
 
     return (
         <div>
@@ -51,11 +23,7 @@ const SelectedWorks = (props) => {
             {featured_projects && featured_projects.length > 0 && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-20 pt-14 md:pt-24">
                     {featured_projects?.map((project, i) => (
-                        project?.make_featured ? (
-                            <FeaturedProject key={`project-${i}`} project={project} />
-                        ) : (
-                            <DefaultProject key={`project-${i}`} project={project} />
-                        )
+                        <DynamicProjectCard key={`project-${i}`} project={project} index={i} />
                     ))}       
                 </div>
             )}
@@ -67,71 +35,3 @@ const SelectedWorks = (props) => {
 }
 
 export default SelectedWorks;
-
-
-const FeaturedProject = (props) => {
-    const { project } = props;
-    const [isHovered, setIsHovered] = useState(false);
-
-    return (
-        <div className="col-span-12 group cursor-pointer" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <div className="overflow-hidden relative aspect-[1180/538]">
-                <Image className="scale-100 duration-300 ease group-hover:scale-105 group-hover:blur-sm" objectFit="cover" src={urlFor(project?.featured_image).format("webp").url()} alt={`${project?.title} Thumbnail`} fill />
-            </div>
-            <div className="pt-6 flex items-start justify-between px-4">
-                <div className="flex flex-col gap-y-4">
-                    <h3 className="text-3xl font-light tracking-widest uppercase text-black">{project?.title}</h3>
-                    <div className="flex text-xs items-center font-light text-[#5A5A5A] bg-[#f4f4f4] w-fit font-mono uppercase px-3 py-1 rounded-full">
-                        {project?.category}
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
-
-const DefaultProject = (props) => {
-    const { project } = props;
-
-    const [isHovered, setIsHovered] = useState(false);
-    const caseStudyText = "View Case Study";
-    let marqueeArr = [];
-    marqueeArr = [caseStudyText, caseStudyText, caseStudyText, caseStudyText];
-
-    const animationVariant = {
-        initial: {
-            opacity: 0,
-        },
-        visible: {
-            opacity: 1,
-            transition: {
-                duration: 0.5
-            }
-        }
-    }
-
-    return (
-        <Link href={`/portfolio/${project?.slug.current}` || ""} className="cursor-pointer group" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <div className="overflow-hidden aspect-[580/322] relative">
-                <Image className="scale-100 duration-300 ease group-hover:scale-105 group-hover:blur-sm" objectFit="cover" src={urlFor(project?.featured_image).format("webp").url()} alt={`${project?.title} Thumbnail`} fill />
-                <motion.div variants={animationVariant} initial="initial" animate={isHovered ? "visible" : "initial"} className="absolute z-[3] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
-                    <Marquee className="w-full" loop={0}>
-                        {marqueeArr.map((text, i) => (
-                            <h2 className="uppercase text-6xl text-white font-bold w-full px-4">{text}</h2>
-                        ))}
-                    </Marquee>
-                </motion.div>
-            </div>
-            <div className="pt-6 flex flex-col items-start justify-between px-4">
-                <div className="flex flex-col-reverse md:flex-row items-left md:items-center justify-between w-full gap-y-4">
-                    {/* <h3 className="text-3xl font-light tracking-widest uppercase text-black">{project?.title}</h3> */}
-                    <h3 className="text-normal font-serif font-bold tracking-widest uppercase text-black">{project?.title}</h3>
-                    <div className="flex text-[0.6rem] md:text-xs items-center font-light text-slateGrey bg-[#ededf0] w-fit font-mono uppercase px-3 py-1 rounded-full">
-                        {project?.category}
-                    </div>
-                </div>
-                <p className="font-light text-sm mt-4 max-w-[640px]">{project?.excerpt}</p>
-            </div>
-        </Link>
-    )
-}

@@ -28,7 +28,7 @@ const SelectedWorks = (props) => {
                 </div>
             )}
             <div className="w-fit mx-auto mt-20">
-                <LinkButton link={link} />
+                <LinkButton link={link} color="navy" />
             </div>
         </div>
     )

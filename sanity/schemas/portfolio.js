@@ -28,7 +28,10 @@ const portfolio = defineType({
         {
             name: "description",
             title: "Description",
-            type: "text",
+            type: "array",
+            of: [
+                { type: "block" }
+            ],
             description: "More detailed overview of the project, e.g. what it involves, the challenges, techniques used etc",
         },
         {

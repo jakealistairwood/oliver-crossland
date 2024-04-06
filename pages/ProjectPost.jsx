@@ -1,5 +1,6 @@
 import React from "react";
 import FullWidthVideo from "@/components/FullWidthVideo";
+import { PortableText } from "@portabletext/react";
 
 const ProjectPost = ({ project }) => {
     const { title, excerpt, description, category, featured_image, video_id } = project;
@@ -20,7 +21,10 @@ const ProjectPost = ({ project }) => {
                 )}
             </div>
             {description && description.length > 0 && (
-                <p className="max-w-[880px] mx-auto text-2xl font-serif" dangerouslySetInnerHTML={{ __html: description }} />
+                // <p className="max-w-[880px] mx-auto text-2xl font-serif" dangerouslySetInnerHTML={{ __html: description }} />
+                <div className="max-w-[880px] mx-auto prose">
+                    <PortableText value={description} />
+                </div>
             )}
         </>
     )

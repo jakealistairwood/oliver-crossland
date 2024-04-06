@@ -7,6 +7,7 @@ module.exports = {
   ],
   safelist: [
     "bg-navy",
+    "bg-lighterNavy"
   ],
   theme: {
     container: {
@@ -40,7 +41,7 @@ module.exports = {
         lime: "#D2FF50",
         navy: "#153243",
         lighterNavy: "#254151",
-        lightBlue: "#BCE7FD",
+        lightBlue: "#BCE7FD", 
         paleSkyBlue: "#F0F9FD",
         black: "#2B313B",
         slateGrey: "#5F7580",

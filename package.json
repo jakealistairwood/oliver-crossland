@@ -12,6 +12,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@portabletext/react": "^3.0.17",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.30.0",
     "@studio-freight/react-lenis": "^0.0.45",

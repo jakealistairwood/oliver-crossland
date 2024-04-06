@@ -58,6 +58,12 @@ const globalOptions = defineType({
                                     name: "url",
                                     type: "string",
                                     title: "URL",
+                                },
+                                {
+                                    name: "social_name",
+                                    type: "string",
+                                    title: "Social Name",
+                                    description: "e.g. Facebook, LinkedIn, Instagram"
                                 }
                             ]
                         }

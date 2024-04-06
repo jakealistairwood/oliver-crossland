@@ -7,6 +7,7 @@ import Link from 'next/link'
 import UpRightArrow from '../../assets/images/up-right-arrow.svg'
 import {useWindowSize} from '@/hooks/useWindowSize'
 import { usePathname } from 'next/navigation'
+import NavLink from '../elements/NavLink'
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -99,7 +100,7 @@ const Navbar = () => {
         // ease: [0.6, 0.01, -0.05, 1],
         ease: 'easeInOut',
       }}
-      className={`fixed flex justify-center left-1/2 -translate-x-1/2 ${isLight && "bg-white/70 backdrop-blur-lg"} items-center w-full z-[99] py-2 mt-2`}
+      className={`fixed flex max-w-[1280px] justify-center left-1/2 -translate-x-1/2 ${isLight && "bg-black/10 backdrop-blur-lg"} items-center w-full z-[99] py-2 mt-2`}
     >
       <div className="container">
         <nav className="flex items-center w-full justify-between">
@@ -113,13 +114,16 @@ const Navbar = () => {
               className={`flex items-center gap-x-10 ${scrolled || isLight ? 'text-black' : 'text-white'} font-light`}
             >
               <li>
-                <Link href="/">About</Link>
+                {/* <Link href="/">About</Link> */}
+                <NavLink link="/" label="About" isLight={isLight} />
               </li>
               <li>
-                <Link href="/about">Services</Link>
+                {/* <Link href="/about">Services</Link> */}
+                <NavLink href="/about" label="Services" isLight={isLight} />
               </li>
               <li>
-                <Link href="/portfolio">Portfolio</Link>
+                {/* <Link href="/portfolio">Portfolio</Link> */}
+                <NavLink href="/portfolio" label="Portfolio" isLight={isLight} />
               </li>
             </ul>
           </div>

@@ -7,6 +7,7 @@ import Logo from '@/assets/images/footer-logo.svg'
 import {urlFor} from '@/utils/SanityImage'
 import PhoneIcon from '@/assets/icons/PhoneIcon'
 import EmailIcon from '@/assets/icons/EmailIcon'
+import NavLink from '@/components/elements/NavLink'
 
 const FooterWrapper = ({data, site_pages}) => {
   const {cta, social_links, contact_links} = data
@@ -37,7 +38,7 @@ const FooterWrapper = ({data, site_pages}) => {
             {social_links && social_links.length > 0 && (
               <div className="flex items-center gap-4">
                 {social_links?.map((link, i) => (
-                  <Link href={link?.url || ''}>
+                  <Link href={link?.url || ''} target="_blank" rel="noreferrer" aria-label={`Go to Oliver Crossland's ${link?.social_name} channel`}>
                     <Image src={urlFor(link?.icon).url()} width={24} height={24} alt="" />
                   </Link>
                 ))}

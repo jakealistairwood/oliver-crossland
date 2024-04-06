@@ -72,14 +72,13 @@ const ProjectCard = (props) => {
                     </motion.div>
                 </div>
                 <div className="pt-6 flex flex-col items-start justify-between md:px-4">
-                    <div className="flex flex-col-reverse md:flex-row items-left md:items-center justify-between w-full gap-y-4">
+                    <div className="flex flex-col items-left justify-between w-full gap-y-[4px]">
                         {/* <h3 className="text-3xl font-light tracking-widest uppercase text-black">{project?.title}</h3> */}
-                        <h3 className="text-normal font-serif font-bold tracking-widest uppercase text-black">{project?.title}</h3>
-                        <div className="flex text-[0.6rem] md:text-xs items-center font-light text-[#5A5A5A] bg-[#f4f4f4] w-fit font-mono uppercase px-3 py-1 rounded-full">
+                        <h3 className="text-lg font-serif font-bold tracking-widest uppercase text-black">{project?.title}</h3>
+                        <p className="flex items-center font-normal text-[#6f6f6f] tracking-wide w-fit font-serif">
                             {project?.category}
-                        </div>
+                        </p>
                     </div>
-                    <p className="font-light text-sm mt-4 max-w-[640px]">{project?.excerpt}</p>
                 </div>
             </Link>
         </motion.div>

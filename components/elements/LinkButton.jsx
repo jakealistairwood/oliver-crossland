@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const LinkButton = ({ link }) => {
+const LinkButton = ({ link, color }) => {
     const { label, url } = link;
     const [linkHovered, setLinkHovered] = useState(false);
 
@@ -15,13 +15,18 @@ const LinkButton = ({ link }) => {
         },
     }
 
+    const linkColor = {
+        lighterNavy: "bg-lighterNavy",
+        navy: "bg-navy",
+    }
+
     return (
         <Link
                 onMouseEnter={() => setLinkHovered(true)}
                 onMouseLeave={() => setLinkHovered(false)}
                 onFocus={() => setLinkHovered(true)}
                 onBlur={() => setLinkHovered(false)}
-                className="flex items-center gap-2 mt-10 bg-lighterNavy pl-4 pr-[10px] py-[10px] rounded-full text-white uppercase font-light"
+                className={`flex items-center gap-2 mt-10 ${linkColor[color] || "bg-lighterNavy"} pl-4 pr-[10px] py-[10px] rounded-full text-white uppercase font-light`}
                 href={url || ''}
             >
                 <span>{label}</span>

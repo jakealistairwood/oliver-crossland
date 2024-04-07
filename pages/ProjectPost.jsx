@@ -4,8 +4,8 @@ import { PortableText } from "@portabletext/react";
 
 const ProjectPost = (props) => {
     const { project } = props;
-    const { title, excerpt, description, category, featured_image, video_id } = project;
-    
+    const { title = "", excerpt = "", description = "", category = "", featured_image, video_id = "" } = project;
+
     return (
         <>
             <header className="flex flex-col items-center text-center pt-[140px] pb-20 max-w-[1100px] mx-auto">

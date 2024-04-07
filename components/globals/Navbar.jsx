@@ -106,7 +106,7 @@ const Navbar = () => {
         <nav className="flex items-center w-full justify-between">
           <div className="flex items-center gap-x-[129px]">
             <div className={`max-w-[250px] w-full relative`}>
-              <Link className={`${scrolled || isLight ? 'text-black' : 'text-white'}`} href="/">
+              <Link className={`${scrolled || isLight ? 'text-black' : 'text-white'}`} aria-label="Go to Homepage" href="/">
                 <Logo scrolled={scrolled} isLight={isLight} />
               </Link>
             </div>

@@ -24,6 +24,14 @@ const logoMarquee = defineType({
                             name: "image",
                             type: "image",
                             title: "Image",
+                            fields: [
+                                {
+                                    name: "alt_text",
+                                    type: "string",
+                                    title: "Alt Text",
+                                    description: "Just add the name of the company for this field. It's used for accessibility purposes and helps rank your site better in Google"
+                                }
+                            ]
                         },
                         {
                             name: "link",

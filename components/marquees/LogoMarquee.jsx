@@ -21,6 +21,7 @@ const LogoMarquee = (props) => {
                                 className="relative h-full w-auto flex items-center justify-center pr-20" 
                                 target="_blank"
                                 rel="noreferrer"
+                                aria-label="Redirects to company website"
                                 href={logo?.link || ""}
                             >
                                 <Image 
@@ -29,6 +30,7 @@ const LogoMarquee = (props) => {
                                     width={0}
                                     height={0}
                                     loading="eager"
+                                    alt=""
                                 />
                             </Link>
                         ) : (

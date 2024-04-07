@@ -60,8 +60,7 @@ const ProjectCard = (props) => {
                         className="scale-100 duration-300 ease group-hover:scale-105 group-hover:blur-sm object-cover" 
                         src={urlFor(project?.featured_image).format("webp").url()} 
                         alt={`${project?.title} Thumbnail`} 
-                        fill 
-                        sizes="(max-width: 640px) 100vw, 50vw"
+                        fill
                     />
                     <motion.div variants={animationMarqueeOnHover} initial="initial" animate={isHovered ? "visible" : "initial"} className="absolute z-[3] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
                         <Marquee className="w-full" loop={0}>

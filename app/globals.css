@@ -80,3 +80,23 @@ body {
 .bg-offWhite {
   @apply !bg-[#F6F6F6];
 }
+
+
+.prose {
+  h2 {
+    @apply uppercase text-[3rem] font-bold pb-6;
+  }
+
+  p, li {
+   @apply text-[1.2rem] font-light opacity-80 pb-2;
+  }
+
+  ul {
+    list-style-type: disc;
+    @apply ml-8 mt-4;
+  }
+
+  li {
+    @apply pl-4;
+  }
+}

@@ -115,15 +115,15 @@ const Navbar = () => {
             >
               <li>
                 {/* <Link href="/">About</Link> */}
-                <NavLink link="/" label="About" isLight={isLight} />
+                <NavLink link="/" label="About" isLight={isLight} scrolled={scrolled} />
               </li>
               <li>
                 {/* <Link href="/about">Services</Link> */}
-                <NavLink link="/about" label="Services" isLight={isLight} />
+                <NavLink link="/about" label="Services" isLight={isLight} scrolled={scrolled} />
               </li>
               <li>
                 {/* <Link href="/portfolio">Portfolio</Link> */}
-                <NavLink link="/portfolio" label="Portfolio" isLight={isLight} />
+                <NavLink link="/portfolio" label="Portfolio" isLight={isLight} scrolled={scrolled} />
               </li>
             </ul>
           </div>

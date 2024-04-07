@@ -43,7 +43,7 @@ const ThreeColGridItems = ({ section_header, grid_items }) => {
             {grid_items && grid_items.length > 0 && (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
                     {grid_items?.map((item, i) => (
-                        <motion.div ref={ref} initial="initial" animate={controls} variants={fadeInGridItem} custom={i} className={`flex flex-col px-10 py-12 rounded-xl ${i === 0 ? "bg-frostWhite" : ""}`}>
+                        <motion.div ref={ref} initial="initial" animate={controls} variants={fadeInGridItem} custom={i} className={`flex flex-col px-10 py-12 rounded-xl ${i === 0 ? "bg-frostWhite" : ""} hover:bg-frostWhite duration-300 ease`}>
                             <div className="w-[66px] h-[66px] bg-navy rounded-lg relative flex items-center justify-center">
                                 <Image src={urlFor(item?.icon).format("webp").url()} width={40} height={40} alt="" />
                             </div>

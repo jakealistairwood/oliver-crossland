@@ -16,7 +16,7 @@ const ProjectPost = ({ project }) => {
                 {title && title.length > 0 && <h1 className="uppercase text-[6rem] tracking-tighter font-bold leading-none" dangerouslySetInnerHTML={{ __html: title }} />}
                 {excerpt && excerpt.length > 0 && <p className="max-w-[680px] w-full opacity-80 text-lg mt-10" dangerouslySetInnerHTML={{ __html: excerpt }} />}
             </header>   
-            <div className="relative pb-[140px]">
+            <div className={`relative ${description && description.length > 0 ? "pb-0" : "pb-[140px]"}`}>
                 {video_id && video_id.length > 0 && (
                     <div id="home-masthead-video">
                         <FullWidthVideo video_thumbnail={featured_image} video_id={video_id} />
@@ -25,7 +25,7 @@ const ProjectPost = ({ project }) => {
             </div>
             {description && description.length > 0 && (
                 // <p className="max-w-[880px] mx-auto text-2xl font-serif" dangerouslySetInnerHTML={{ __html: description }} />
-                <div className="max-w-[880px] mx-auto prose">
+                <div className="max-w-[880px] mx-auto prose pb-[140px] mt-20">
                     <PortableText value={description} />
                 </div>
             )}

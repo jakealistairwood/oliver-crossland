@@ -17,7 +17,7 @@ const HomeMasthead = (props) => {
 
   return (
     <header className="md:min-h-[110vh] w-full pb-20 md:pb-0">
-        <div className="min-h-[380px]">
+        <div className="min-h-[220px] lg:min-h-[380px]">
             {marqueeLoaded && (
                 <div className="marquee-container">
                     {marquee && marquee.length > 0 && (

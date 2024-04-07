@@ -1,9 +1,10 @@
+"use client";
+
 import React from "react";
 import FullWidthVideo from "@/components/FullWidthVideo";
 import { PortableText } from "@portabletext/react";
 
-const ProjectPost = (props) => {
-    const { project } = props;
+const ProjectPost = ({ project }) => {
     const { title = "", excerpt = "", description = "", category = "", featured_image, video_id = "" } = project;
 
     return (

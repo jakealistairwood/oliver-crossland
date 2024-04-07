@@ -1,7 +1,5 @@
-"use client";
-
 import React from "react";
-import ProjectPost from "@/pages/ProjectPost";
+import ProjectPost from "@/components/pages/ProjectPost";
 
 const Post = (props) => {
     const { project } = props;

@@ -16,9 +16,13 @@ const SelectedWorks = (props) => {
 
     return (
         <div>
-            <header className="flex flex-col items-center text-center gap-0">
-                {section_title && <h2 className="uppercase text-[5rem] leading-none md:text-[8rem] tracking-tighter font-bold">{section_title}</h2>}
+            {/* <header className="flex flex-col items-center text-center gap-0">
+                {section_title && <h2 className="uppercase text-[3rem] md:text-[5rem] leading-none md:text-[8rem] tracking-tighter font-bold">{section_title}</h2>}
                 {description && <p className="max-w-[680px] mt-10 md:mt-0 opacity-80 text-normal md:text-lg font-serif">{description}</p>}
+            </header> */}
+            <header className="flex flex-col items-center text-center gap-0">
+                {section_title && section_title.length > 0 && <h1 className="uppercase text-[3rem] md:text-[5rem] leading-none lg:text-[7rem] tracking-tighter font-bold" dangerouslySetInnerHTML={{ __html: section_title }} />}
+                {description && description.length > 0 && <p className="max-w-[680px] mt-10 md:mt-6 opacity-80 text-normal md:text-lg font-serif" dangerouslySetInnerHTML={{ __html: description }} />}
             </header>
             {featured_projects && featured_projects.length > 0 && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-20 pt-14 md:pt-24">

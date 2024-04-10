@@ -19,7 +19,7 @@ const PortfolioList = (props) => {
     return (
         <>
             <header className="flex flex-col items-center text-center pt-[80px] md:pt-[140px] pb-20">
-                <h1 className="uppercase text-[5rem] leading-none md:text-[8rem] tracking-tighter font-bold" dangerouslySetInnerHTML={{ __html: heading }} />
+                <h1 className="uppercase text-[3rem] md:text-[5rem] leading-none lg:text-[7rem] tracking-tighter font-bold" dangerouslySetInnerHTML={{ __html: heading }} />
                 <p className="max-w-[680px] mt-10 md:mt-6 opacity-80 text-normal md:text-lg font-serif" dangerouslySetInnerHTML={{ __html: description }} />
             </header>
             {portfolio && portfolio.length > 0 && (

@@ -6,21 +6,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 import UpRightArrow from '../../assets/images/up-right-arrow.svg'
 import {useWindowSize} from '@/hooks/useWindowSize'
-import { usePathname } from 'next/navigation'
+import {usePathname} from 'next/navigation'
 import NavLink from '../elements/NavLink'
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const containerControls = useAnimation()
   const controls = useAnimation()
 
   const {width} = useWindowSize()
 
-  const pathname = usePathname();
+  const pathname = usePathname()
 
-  const isLight = pathname.includes("/portfolio");
+  const isLight = pathname.includes('/portfolio')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,25 +52,63 @@ const Navbar = () => {
   }, [scrolled])
 
   return width < 1080 ? (
-    <header className="w-full">
-        <div className="container sticky top-0 bg-navy w-full">
-            <div className="w-full flex items-center justify-between py-4">
-                <Link className={`${scrolled || isLight ? 'text-black' : 'text-white'}`} href="/" aria-label="Go to Homepage">
-                    <Logo scrolled={scrolled} isLight={isLight} />
-                </Link>
-                <button className="flex flex-col items-center justify-center gap-y-2 p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} type="button">
-                    <div className="h-[1px] w-[30px] bg-white" />
-                    <div className="h-[1px] w-[30px] bg-white" />
-                    <div className="h-[1px] w-[30px] bg-white" />
-                </button>
-                {mobileMenuOpen && (
-                    <div className="fixed inset-0 bg-white">
-                        
-                    </div>
-                )}
-            </div>
+    <>
+      <header className="w-full">
+        <div className="container sticky top-0 bg-navy w-full z-[100]">
+          <div className="w-full flex items-center justify-between py-4">
+            <Link
+              className={`${scrolled || isLight ? 'text-black' : 'text-white'}`}
+              href="/"
+              aria-label="Go to Homepage"
+            >
+              <Logo scrolled={scrolled} isLight={isLight} />
+            </Link>
+            <button
+              className="flex flex-col items-center justify-center gap-y-2 p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              type="button"
+            >
+              <div className="h-[1px] w-[30px] bg-white" />
+              <div className="h-[1px] w-[30px] bg-white" />
+              <div className="h-[1px] w-[30px] bg-white" />
+            </button>
+          </div>
         </div>
-    </header>
+      </header>
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 bg-white z-[101]">
+          <div className="w-full min-h-[45px] p-4 flex items-center justify-end">
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              type="button"
+              className="flex items-center justify-center gap-y-2 p-2 flex-col"
+            >
+              <div className="h-[1px] w-[30px] bg-black" />
+              <div className="h-[1px] w-[30px] bg-black" />
+              <div className="h-[1px] w-[30px] bg-black" />
+            </button>
+          </div>
+          <menu className={`flex flex-col items-start gap-x-10 text-black font-light mt-10`}>
+            <li className="text-[2rem] font-light py-4 border-b border-offWhite px-8 w-full">
+              {/* <Link href="/">About</Link> */}
+              <NavLink link="/" label="Home" isLight={isLight} scrolled={scrolled} />
+            </li>
+            <li className="text-[2rem] font-light py-4 border-b border-offWhite px-8 w-full">
+              {/* <Link href="/">About</Link> */}
+              <NavLink link="/about" label="About" isLight={isLight} scrolled={scrolled} />
+            </li>
+            <li className="text-[2rem] font-light py-4 border-b border-offWhite px-8 w-full">
+              {/* <Link href="/about">Services</Link> */}
+              <NavLink link="/services" label="Services" isLight={isLight} scrolled={scrolled} />
+            </li>
+            <li className="text-[2rem] font-light py-4 border-b border-offWhite px-8 w-full">
+              {/* <Link href="/portfolio">Portfolio</Link> */}
+              <NavLink link="/portfolio" label="Portfolio" isLight={isLight} scrolled={scrolled} />
+            </li>
+          </menu>
+        </div>
+      )}
+    </>
   ) : (
     <motion.header
       variants={{
@@ -100,17 +138,21 @@ const Navbar = () => {
         // ease: [0.6, 0.01, -0.05, 1],
         ease: 'easeInOut',
       }}
-      className={`fixed flex max-w-[1280px] justify-center left-1/2 -translate-x-1/2 ${isLight && "bg-black/10 backdrop-blur-lg"} items-center w-full z-[99] py-2 mt-2`}
+      className={`fixed flex max-w-[1280px] justify-center left-1/2 -translate-x-1/2 ${isLight && 'bg-black/10 backdrop-blur-lg'} items-center w-full z-[99] py-2 mt-2`}
     >
       <div className="container">
         <nav className="flex items-center w-full justify-between">
           <div className="flex items-center gap-x-[129px]">
             <div className={`max-w-[250px] w-full relative`}>
-              <Link className={`${scrolled || isLight ? 'text-black' : 'text-white'}`} aria-label="Go to Homepage" href="/">
+              <Link
+                className={`${scrolled || isLight ? 'text-black' : 'text-white'}`}
+                aria-label="Go to Homepage"
+                href="/"
+              >
                 <Logo scrolled={scrolled} isLight={isLight} />
               </Link>
             </div>
-            <ul
+            <menu
               className={`flex items-center gap-x-10 ${scrolled || isLight ? 'text-black' : 'text-white'} font-light`}
             >
               <li>
@@ -123,9 +165,14 @@ const Navbar = () => {
               </li>
               <li>
                 {/* <Link href="/portfolio">Portfolio</Link> */}
-                <NavLink link="/portfolio" label="Portfolio" isLight={isLight} scrolled={scrolled} />
+                <NavLink
+                  link="/portfolio"
+                  label="Portfolio"
+                  isLight={isLight}
+                  scrolled={scrolled}
+                />
               </li>
-            </ul>
+            </menu>
           </div>
           <div className="flex items-center text-white font-medium gap-10">
             <div
@@ -159,10 +206,12 @@ const Navbar = () => {
               >
                 <path
                   d="M12 5.39641H9.05677L11.7789 4.2759L11.3187 3.15538L8.56673 4.28785L10.6703 2.18426L9.81574 1.32968L7.71215 3.43327L8.84462 0.681275L7.7241 0.221115L6.60359 2.94323V0H5.39641V2.94024L4.2759 0.221115L3.15538 0.681275L4.28785 3.43327L2.18426 1.32968L1.32968 2.18426L3.43327 4.28785L0.681275 3.15538L0.221115 4.2759L2.94323 5.39641H0V6.60359H2.94024L0.221115 7.7241L0.681275 8.84462L3.43327 7.70916L1.32968 9.81574L2.18426 10.6703L4.29084 8.56673L3.15538 11.3187L4.2759 11.7789L5.39641 9.05976V12H6.60359V9.05976L7.7241 11.7789L8.84462 11.3187L7.70916 8.56673L9.81574 10.6703L10.6703 9.81574L8.56673 7.70916L11.3187 8.84462L11.7789 7.7241L9.05976 6.60359H12V5.39641Z"
-                  fill={isLight ? "black" : "white"}
+                  fill={isLight ? 'black' : 'white'}
                 />
               </svg>
-              <span className={`font-light ${isLight ? "text-black" : "text-white"}`}>Available For Projects</span>
+              <span className={`font-light ${isLight ? 'text-black' : 'text-white'}`}>
+                Available For Projects
+              </span>
             </div>
             <Link
               href="/contact"
@@ -171,7 +220,9 @@ const Navbar = () => {
               <div
                 className={`inset-0 absolute ${scrolled ? 'bg-black' : 'bg-white backdrop-blur-lg'} z-[-1]`}
               />
-              <span className={`${scrolled ? "text-white" : "text-navy"} font-light`}>Let&apos;s Work Together</span>
+              <span className={`${scrolled ? 'text-white' : 'text-navy'} font-light`}>
+                Let&apos;s Work Together
+              </span>
             </Link>
           </div>
         </nav>
@@ -182,7 +233,7 @@ const Navbar = () => {
 
 export default Navbar
 
-const Logo = ({ scrolled, isLight }) => {
+const Logo = ({scrolled, isLight}) => {
   return (
     <svg
       width="109"

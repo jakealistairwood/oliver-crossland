@@ -13,7 +13,7 @@ const ProjectPost = ({ project }) => {
                 <div className="flex text-normal items-center font-light text-[#5A5A5A] bg-[#f4f4f4] w-fit font-mono uppercase px-3 py-1 rounded-full mb-10">
                     {category}
                 </div>
-                {title && title.length > 0 && <h1 className="uppercase text-[6rem] tracking-tighter font-bold leading-none" dangerouslySetInnerHTML={{ __html: title }} />}
+                {title && title.length > 0 && <h1 className="uppercase text-[3rem] md:text-[6rem] tracking-normal md:tracking-tighter font-bold leading-none" dangerouslySetInnerHTML={{ __html: title }} />}
                 {excerpt && excerpt.length > 0 && <p className="max-w-[680px] w-full opacity-80 text-lg mt-10" dangerouslySetInnerHTML={{ __html: excerpt }} />}
             </header>   
             <div className={`relative ${description && description.length > 0 ? "pb-0" : "pb-[140px]"}`}>

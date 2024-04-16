@@ -14,6 +14,7 @@ import homeMasthead from "./homeMasthead"
 import logoMarquee from "./logoMarquee"
 import portfolioList from "./portfolioList"
 import threeColGridItems from "./threeColGridItems"
+import experiences from "./experiences"
 
 export const schemaTypes = [
     page,
@@ -31,5 +32,6 @@ export const schemaTypes = [
     homeMasthead,
     logoMarquee,
     portfolioList,
-    threeColGridItems
+    threeColGridItems,
+    experiences
 ]

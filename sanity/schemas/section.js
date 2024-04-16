@@ -51,6 +51,7 @@ export default defineType({
                                     { title: "Logo Marquee", value: "logoMarquee" },
                                     { title: "Portfolio List", value: "portfolioList" },
                                     { title: "Three Col Grid Items", value: "threeColGridItems" },
+                                    { title: "Experiences", value: "experiences" },
                                 ]
                             },
                             initialValue: "",
@@ -126,6 +127,12 @@ export default defineType({
                             type: "threeColGridItems",
                             title: "Three Col Grid Items",
                             hidden: ({ parent }) => parent.component!== "threeColGridItems",
+                        },
+                        {
+                            name: "experiences",
+                            type: "experiences",
+                            title: "Experiences",
+                            hidden: ({ parent }) => parent.component!== "experiences",
                         }
                     ]
                 }

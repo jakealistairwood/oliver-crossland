@@ -19,7 +19,7 @@ const TextContent = (props) => {
   }
 
   if(under_home_masthead_video) {
-    containerClasses.push('md:pt-[400px]')
+    containerClasses.push('xl:pt-[420px]')
   }
 
   containerClasses = containerClasses.join(' ')

@@ -23,7 +23,7 @@ const FooterWrapper = ({data, site_pages}) => {
           dangerouslySetInnerHTML={{__html: cta?.heading}}
         />
         <Link
-          className="bg-white uppercase w-fit font-light text-[#0D0F16] px-8 py-[10px] md:py-5 rounded-full text-normal md:text-2xl flex h-fit items-center justify-center"
+          className="bg-white uppercase w-fit font-light text-[#0D0F16] px-8 py-[10px] md:py-5 rounded-full text-normal xl:text-2xl flex h-fit items-center justify-center"
           href={cta?.link?.url || ''}
         >
           {cta?.link?.label}

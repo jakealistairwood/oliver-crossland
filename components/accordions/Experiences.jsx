@@ -27,7 +27,7 @@ const Experiences = (props) => {
         <header className="flex flex-col">
           {section_header?.heading && section_header.heading.length > 0 && (
             <h2
-              className="text-[5rem] uppercase font-bold"
+              className="text-[3rem] md:text-[5rem] leading-[1.2] uppercase font-bold"
               dangerouslySetInnerHTML={{__html: section_header?.heading}}
             />
           )}
@@ -85,7 +85,7 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
         <div className="col-span-2">
           {/* {company.name && company.name.length > 0 && <h3 className="font-serif text-xl font-bold uppercase" dangerouslySetInnerHTML={{ __html: company.name }} />} */}
           {company.logo && (
-            <div className="min-w-[80px] max-w-[80px] aspect-[1/1] relative">
+            <div className="min-w-[60px] max-w-[60px] md:min-w-[80px] md:max-w-[80px] aspect-[1/1] relative">
               <Image
                 src={urlFor(company?.logo).format('webp').url()}
                 alt="company logo"
@@ -95,7 +95,7 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
             </div>
           )}
         </div>
-        <div className="col-span-7 pl-10 place-content-center">
+        <div className="col-span-10 md:col-span-7 pl-10 place-content-center">
           <div className="flex flex-col">
             {position && position.length > 0 && (
               <h3
@@ -111,7 +111,7 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
             )}
           </div>
         </div>
-        <div className="col-span-3 text-right place-content-center">
+        <div className="hidden md:block md:col-span-3 text-right place-content-center">
           {date && date.length > 0 && (
             <p
               className="opacity-50 font-serif uppercase"
@@ -121,8 +121,8 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
         </div>
       </div>
       <div className="grid grid-cols-12 w-full">
-        <div className="col-span-2" />
-        <div className="col-span-7 pl-10">
+        <div className="lg:col-span-2" />
+        <div className="col-span-12 lg:col-span-7 lg:pl-10">
           {responsibilites && responsibilites.length > 0 && (
             <motion.ul
               variants={accordionAnimation}
@@ -142,7 +142,7 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
             </motion.ul>
           )}
         </div>
-        <div className="col-span-3" />
+        <div className="lg:col-span-3" />
       </div>
     </motion.button>
   ) : (
@@ -157,7 +157,7 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
         <div className="col-span-2">
           {/* {company.name && company.name.length > 0 && <h3 className="font-serif text-xl font-bold uppercase" dangerouslySetInnerHTML={{ __html: company.name }} />} */}
           {company.logo && (
-            <div className="min-w-[80px] max-w-[80px] aspect-[1/1] relative">
+            <div className="min-w-[60px] max-w-[60px] md:min-w-[80px] md:max-w-[80px] aspect-[1/1] relative">
               <Image
                 src={urlFor(company?.logo).format('webp').url()}
                 alt="company logo"
@@ -167,7 +167,7 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
             </div>
           )}
         </div>
-        <div className="col-span-7 pl-10 place-content-center">
+        <div className="col-span-10 md:col-span-7 pl-10 place-content-center">
           <div className="flex flex-col">
             {position && position.length > 0 && (
               <h3
@@ -183,7 +183,7 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
             )}
           </div>
         </div>
-        <div className="col-span-3 text-right place-content-center">
+        <div className="hidden md:block md:col-span-3 text-right place-content-center">
           {date && date.length > 0 && (
             <p
               className="opacity-50 font-serif uppercase"

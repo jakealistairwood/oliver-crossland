@@ -43,6 +43,11 @@ const experiences = defineType({
                                     title: "Name",
                                 },
                                 {
+                                    name: "logo",
+                                    type: "image",
+                                    title: "Logo",
+                                },
+                                {
                                     name: "link",
                                     type: "string",
                                     title: "Link",

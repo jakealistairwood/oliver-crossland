@@ -104,7 +104,7 @@ const FooterWrapper = ({data, site_pages}) => {
       </div>
       <div className="flex flex-col md:flex-row gap-y-4 items-left md:items-center justify-between w-full pb-10 pt-20">
         <small className="opacity-60 font-extralight">
-          &copy; Oliver Crossland Videography {currentYear}
+          &copy; Oli Crossland Videography {currentYear}
         </small>
         <small className="opacity-60 font-extralight">
           Site designed and developed by{' '}

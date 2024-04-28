@@ -7,7 +7,8 @@ module.exports = {
   ],
   safelist: [
     "bg-navy",
-    "bg-lighterNavy"
+    "bg-lighterNavy",
+    "bg-blueGrey",
   ],
   theme: {
     container: {
@@ -47,6 +48,7 @@ module.exports = {
         black: "#2B313B",
         slateGrey: "#5F7580",
         peach: "#FE938C",
+        blueGrey: "#2B313B",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

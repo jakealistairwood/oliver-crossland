@@ -55,6 +55,25 @@ const threeColGridItems = defineType({
                     ]
                 }
             ]
+        },
+        {
+            name: "options",
+            type: "object",
+            title: "Options",
+            fields: [
+                {
+                    name: "invert_colors",
+                    type: "boolean",
+                    title: "Invert Colors",
+                    initialValue: false,
+                },
+                {
+                    name: "center_header",
+                    type: "boolean",
+                    title: "Center Header",
+                    initialValue: false,
+                }
+            ]
         }
     ]
 })

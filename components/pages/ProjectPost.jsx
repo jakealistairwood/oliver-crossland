@@ -10,7 +10,7 @@ const ProjectPost = ({ project }) => {
     return (
         <>
             <header className="flex flex-col items-center text-center pt-[140px] pb-20 max-w-[1100px] mx-auto">
-                <div className="flex text-normal items-center font-light text-[#5A5A5A] bg-[#f4f4f4] w-fit font-mono uppercase px-3 py-1 rounded-full mb-10">
+                <div className="flex text-normal items-center font-light text-slateGrey bg-ivory w-fit font-mono uppercase px-3 py-1 rounded-full mb-10">
                     {category}
                 </div>
                 {title && title.length > 0 && <h1 className="uppercase text-[3rem] md:text-[6rem] tracking-normal md:tracking-tighter font-bold leading-none" dangerouslySetInnerHTML={{ __html: title }} />}

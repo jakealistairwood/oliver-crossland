@@ -3,7 +3,7 @@ import Image from "next/image";
 import { urlFor } from "@/utils/SanityImage";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-const ThreeColGridItems = ({ section_header, grid_items }) => {
+const ThreeColGridItems = ({ section_header, grid_items, options }) => {
     const { heading, subheading, description } = section_header;
 
     const ref = useRef(null);
@@ -36,16 +36,18 @@ const ThreeColGridItems = ({ section_header, grid_items }) => {
 
     return (
         <div className="flex flex-col">
-            <header>
-                {subheading && subheading.length > 0 && <div className="bg-ivory text-slateGrey text-[0.8rem] md:text-normal w-fit px-3 py-[6px] rounded-full flex uppercase">{subheading}</div>}
+            <header className={`flex flex-col ${options?.center_header ? "text-center items-center" : "items-start text-left"}`}>
+                {subheading && subheading.length > 0 && <div className={`${options?.invert_colors ? "bg-white" : "bg-ivory"} text-slateGrey text-[0.8rem] md:text-normal w-fit px-3 py-[6px] rounded-full flex uppercase`}>{subheading}</div>}
                 {heading && heading.length > 0 && <h2 className="text-[5rem] uppercase font-bold" dangerouslySetInnerHTML={{ __html: heading }} />}
             </header>
             {grid_items && grid_items.length > 0 && (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
                     {grid_items?.map((item, i) => (
-                        <motion.div ref={ref} initial="initial" animate={controls} variants={fadeInGridItem} custom={i} className={`flex flex-col px-10 py-12 rounded-xl ${i === 0 ? "bg-frostWhite" : ""} hover:bg-frostWhite duration-300 ease`}>
+                        <motion.div ref={ref} initial="initial" animate={controls} variants={fadeInGridItem} custom={i} className={`flex flex-col px-10 py-12 rounded-xl ${options?.invert_colors ? "bg-white" : "bg-frostWhite"} duration-300 ease`}>
                             <div className="w-[66px] h-[66px] bg-navy rounded-lg relative flex items-center justify-center">
-                                <Image src={urlFor(item?.icon).format("webp").url()} width={40} height={40} alt="" />
+                                {item?.icon && (
+                                    <Image src={urlFor(item?.icon).format("webp").url()} width={40} height={40} alt="" />
+                                )}
                             </div>
                             <div className="mt-auto pt-10">
                                 <h3 className="uppercase font-serif text-lg font-medium">{item?.heading}</h3>

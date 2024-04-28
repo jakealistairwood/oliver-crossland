@@ -41,6 +41,7 @@ export default defineType({
                                     { title: "Choose component", value: "" },
                                     { title: "Masthead", value: "masthead" },
                                     { title: "Home Masthead", value: "homeMasthead" },
+                                    { title: "About Masthead", value: "aboutMasthead" },
                                     { title: "Text Content", value: "textContent" },
                                     { title: "Scrollable Text", value: "scrollableText" },
                                     { title: "Scalable Image On Scroll", value: "scalableImageOnScroll" },
@@ -52,6 +53,7 @@ export default defineType({
                                     { title: "Portfolio List", value: "portfolioList" },
                                     { title: "Three Col Grid Items", value: "threeColGridItems" },
                                     { title: "Experiences", value: "experiences" },
+                                    { title: "About Content", value: "aboutContent" },
                                 ]
                             },
                             initialValue: "",
@@ -67,6 +69,12 @@ export default defineType({
                             type: "homeMasthead",
                             title: "Home Masthead",
                             hidden: ({ parent }) => parent.component !== "homeMasthead",
+                        },
+                        {
+                            name: "aboutMasthead",
+                            type: "aboutMasthead",
+                            title: "About Masthead",
+                            hidden: ({ parent }) => parent.component !== "aboutMasthead",
                         },
                         {
                             name: "textContent",
@@ -133,6 +141,12 @@ export default defineType({
                             type: "experiences",
                             title: "Experiences",
                             hidden: ({ parent }) => parent.component!== "experiences",
+                        },
+                        {
+                            name: "aboutContent",
+                            type: "aboutContent",
+                            title: "About Content",
+                            hidden: ({ parent }) => parent.component!== "aboutContent",
                         }
                     ]
                 }
@@ -150,6 +164,7 @@ export default defineType({
                     { title: "Gray", value: "gray" },
                     { title: "Black", value: "black" },
                     { title: "Navy", value: "navy" },
+                    { title: "Blue Grey", value: "blueGrey" }
                 ]
             },
             initialValue: "",

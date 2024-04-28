@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import Masthead from "@/components/Masthead";
 import HomeMasthead from "@/components/mastheads/HomeMasthead";
+import AboutMasthead from "@/components/mastheads/AboutMasthead";
 import PortfolioList from "@/components/PortfolioList";
 import portfolio from "@/sanity/schemas/portfolio";
 const TextContent = dynamic(() => import("@/components/TextContent"));
@@ -15,12 +16,18 @@ const ImageDivider = dynamic(() => import("@/components/ImageDivider"));
 const LogoMarquee = dynamic(() => import("@/components/marquees/LogoMarquee"));
 const ThreeColGridItems = dynamic(() => import("@/components/ThreeColGridItems"));
 const Experiences = dynamic(() => import("@/components/accordions/Experiences"));
+const AboutContent = dynamic(() => import("@/components/AboutContent"));
 
-const ComponentRenderer = ({ components = [], portfolio }) => {
+const ComponentRenderer = ({ components = [], portfolio, backgroundColor }) => {
     const renderComponent = (layoutName, props) => {
         const Component = {
             masthead: Masthead,
             homeMasthead: HomeMasthead,
+            aboutMasthead: AboutMasthead,
+            textContent: TextContent,
+            scalableImageOnScroll: ScalableImageOnScroll,
+            scrollableText: ScrollableText,
+            textImageMarquee: TextImageMarquee,
             portfolioList: PortfolioList,
             textContent: TextContent,
             scalableImageOnScroll: ScalableImageOnScroll,
@@ -32,9 +39,10 @@ const ComponentRenderer = ({ components = [], portfolio }) => {
             logoMarquee: LogoMarquee,
             threeColGridItems: ThreeColGridItems,
             experiences: Experiences,
+            aboutContent: AboutContent,
         }[layoutName];
 
-        return Component ? <Component key={`${props.key}`} {...props} portfolio={portfolio}  /> : null;
+        return Component ? <Component key={`${props.key}`} {...props} portfolio={portfolio} backgroundColor={backgroundColor}  /> : null;
     }
 
     return (

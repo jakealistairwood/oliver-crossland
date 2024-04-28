@@ -11,10 +11,12 @@ import textImageMarquee from "./textImageMarquee"
 import fullWidthVideo from "./fullWidthVideo"
 import imageDivider from "./imageDivider"
 import homeMasthead from "./homeMasthead"
+import aboutMasthead from "./aboutMasthead"
 import logoMarquee from "./logoMarquee"
 import portfolioList from "./portfolioList"
 import threeColGridItems from "./threeColGridItems"
 import experiences from "./experiences"
+import aboutContent from "./aboutContent"
 
 export const schemaTypes = [
     page,
@@ -30,8 +32,10 @@ export const schemaTypes = [
     fullWidthVideo,
     imageDivider,
     homeMasthead,
+    aboutMasthead,
     logoMarquee,
     portfolioList,
     threeColGridItems,
-    experiences
+    experiences,
+    aboutContent,
 ]

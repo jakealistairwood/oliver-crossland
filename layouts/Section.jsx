@@ -35,13 +35,14 @@ const Section = memo((props) => {
         white: "bg-white",
         black: "bg-black",
         navy: "bg-navy",
+        blueGrey: "bg-blueGrey",
     }
 
 
     return (
         <section ref={containerRef} className={`relative ${backgroundColors[background_color] || "bg-white"} ${padding_bottom ? paddingBottomSizes[padding_bottom] : ""} ${padding_top ? paddingTopSizes[padding_top] : ""} ${containerClasses.join(" ")}`}>
             <div className={remove_container ? "" : "container"}>
-                <ComponentRenderer components={components} portfolio={portfolio} />
+                <ComponentRenderer components={components} backgroundColor={background_color} portfolio={portfolio} />
             </div>
         </section>
     )

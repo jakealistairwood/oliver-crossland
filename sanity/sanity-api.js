@@ -40,7 +40,7 @@ export const fetchAboutData = async () => {
 
 export const fetchPortfolioData = async () => {
     return createClient(clientConfig).fetch(
-        groq`*[_type == "page" && slug.current == "/portfolio"]{
+        groq`*[_type == "page" && slug.current == "portfolio"]{
             _id,
             "slug": slug.current,
             sections[]{

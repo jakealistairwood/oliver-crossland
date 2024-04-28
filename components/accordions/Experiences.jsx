@@ -32,7 +32,7 @@ const Experiences = (props) => {
             />
           )}
           {section_header?.description && section_header.description.length > 0 && (
-            <p dangerouslySetInnerHTML={{__html: description}} />
+            <p dangerouslySetInnerHTML={{__html: section_header?.description}} />
           )}
         </header>
       )}

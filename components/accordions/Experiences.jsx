@@ -56,6 +56,7 @@ export default Experiences
 
 const JobPosition = ({index, company, position, responsibilites, date, backgroundColor}) => {
   const [accordionOpen, setAccordionOpen] = useState(false)
+  const [hovered, setHovered] = useState(false)
 
   const fadeInVariant = {
     initial: {
@@ -79,6 +80,10 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
       viewport={{once: true, amount: 0.3}}
       type="button"
       onClick={() => setAccordionOpen(!accordionOpen)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocus={() => setHovered(true)}
+      onBlur={() => setHovered(false)}
       className={`border-solid ${backgroundColor === 'blueGrey' ? 'border-[#444B55]' : 'border-[#E5E5E5]'}  text-left py-8 ${index === 0 ? 'border-t border-b' : 'border-b'}`}
     >
       <div className="grid grid-cols-12 w-full">

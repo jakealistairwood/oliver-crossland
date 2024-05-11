@@ -9,7 +9,7 @@ const AboutContent = ({ subheading, heading, content, gallery }) => {
     return (
         <section className="" id="about-me">
             <div className="container">
-                <div className="flex flex-col lg:grid lg:grid-cols-12 py-20 lg:py-[90px]">
+                <div className="flex flex-col lg:grid lg:grid-cols-12">
                     <div className="lg:col-span-3">
                         {subheading && subheading.length > 0 && <div className="bg-ivory text-slateGrey text-[0.8rem] md:text-lg w-fit px-3 py-[6px] mb-6 lg:mb-0 lg:mx-auto rounded-full flex items-center uppercase" dangerouslySetInnerHTML={{ __html: subheading }} />}
                     </div>
@@ -22,9 +22,9 @@ const AboutContent = ({ subheading, heading, content, gallery }) => {
                                 </div>
                             )}
                             {images && images.length > 0 && (
-                                <div className="flex items-center gap-6 mt-20">
+                                <div className="flex flex-col md:flex-row items-center gap-6 mt-20">
                                     {images?.map((image, i) => (
-                                        <div className="aspect-[16/9] grow relative">
+                                        <div className="aspect-[16/9] grow relative w-full">
                                             <Image src={urlFor(image).format("webp").url()} fill objectFit="cover" alt="" />
                                         </div>
                                     ))}

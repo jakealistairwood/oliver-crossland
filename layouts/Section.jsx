@@ -3,10 +3,8 @@ import ComponentRenderer from "./ComponentRenderer";
 
 const Section = memo((props) => {
     const { components = [], remove_container, make_sticky, add_rounded_top_border, background_color, padding_top, padding_bottom, portfolio } = props;
-    console.log(props);
 
     const containerRef = useRef(null);
-    const [isIntersecting, setIsIntersecting] = useState(null);
 
     let containerClasses = [];
 

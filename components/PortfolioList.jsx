@@ -11,10 +11,7 @@ import Marquee from "react-fast-marquee";
 const DynamicProjectCard = dynamic(() => import("./elements/ProjectCard"));
 
 const PortfolioList = (props) => {
-    console.log(props);
     const { heading, description, portfolio } = props;
-
-    console.log(portfolio);
 
     return (
         <>
@@ -38,8 +35,6 @@ export default PortfolioList
 
 const DefaultProject = (props) => {
     const { project, index } = props;
-
-    console.log(project);
 
     const [isHovered, setIsHovered] = useState(false);
     const caseStudyText = "View Case Study";

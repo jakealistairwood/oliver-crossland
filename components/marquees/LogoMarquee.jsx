@@ -5,7 +5,6 @@ import Link from "next/link";
 import {urlFor} from "@/utils/SanityImage";
 
 const LogoMarquee = (props) => {
-    console.log(props);
     const { heading, logos } = props;
 
     const extendedLogos = [...logos, ...logos, ...logos, ...logos];

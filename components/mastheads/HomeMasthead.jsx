@@ -19,7 +19,7 @@ const HomeMasthead = (props) => {
     <header className="md:min-h-[110vh] w-full pb-20 md:pb-0">
         <div className="min-h-[220px] lg:min-h-[380px]">
             {marqueeLoaded && (
-                <div className="marquee-container">
+                <div className="marquee-container pt-12 md:pt-0">
                     {marquee && marquee.length > 0 && (
                         <Marquee>
                             {marquee.map((item, i) => (

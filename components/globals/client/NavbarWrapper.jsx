@@ -8,6 +8,8 @@ import {useWindowSize} from '@/hooks/useWindowSize'
 import {usePathname} from 'next/navigation'
 import NavLink from '../../elements/NavLink'
 import Logo from '../../elements/icons/Logo'
+import MobileNav from './MobileNav'
+
 
 const NavbarWrapper = ({ data }) => {
   const { navbar_data, pages } = data;
@@ -54,50 +56,8 @@ const NavbarWrapper = ({ data }) => {
 
   return width < 1080 ? (
     <>
-      <header className="w-full">
-        <div className="container sticky top-0 bg-navy w-full z-[100]">
-          <div className="w-full flex items-center justify-between py-4">
-            <Link
-              className={`${scrolled || isLight ? 'text-black' : 'text-white'}`}
-              href="/"
-              aria-label="Go to Homepage"
-            >
-              <Logo scrolled={scrolled} isLight={isLight} />
-            </Link>
-            <button
-              className="flex flex-col items-center justify-center gap-y-2 p-2"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              type="button"
-            >
-              <div className="h-[1px] w-[30px] bg-white" />
-              <div className="h-[1px] w-[30px] bg-white" />
-              <div className="h-[1px] w-[30px] bg-white" />
-            </button>
-          </div>
-        </div>
-      </header>
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 bg-white z-[101]">
-          <div className="w-full min-h-[45px] p-4 flex items-center justify-end">
-            <button
-              onClick={() => setMobileMenuOpen(false)}
-              type="button"
-              className="flex items-center justify-center gap-y-2 p-2 flex-col"
-            >
-              <div className="h-[1px] w-[30px] bg-black" />
-              <div className="h-[1px] w-[30px] bg-black" />
-              <div className="h-[1px] w-[30px] bg-black" />
-            </button>
-          </div>
-          <menu className={`flex flex-col items-start gap-x-10 text-black font-light mt-10`}>
-            {pages && pages.map((page, i) => (
-                <li key={`nav-link-${i}`} className="text-[2rem] font-light py-4 border-b border-offWhite px-8 w-full">
-                    <NavLink link={`/${page?.slug !== "/" ? page?.slug : ""}`} label={`${page?.slug === "/" ? "Home" : page?.title}`} isLight={isLight} scrolled={scrolled} />
-                </li>
-            ))}
-          </menu>
-        </div>
-      )}
+        <MobileNav scrolled={scrolled} isLight={isLight} animationControls={containerControls} currentSectionIsDark={currentSectionIsDark} setMobileMenuOpen={setMobileMenuOpen} mobileMenuOpen={mobileMenuOpen} links={pages} />
+        {mobileMenuOpen && <div className="fixed inset-0 bg-black/50 z-[99] backdrop-blur-lg" />}
     </>
   ) : (
     <motion.header
@@ -192,7 +152,7 @@ const NavbarWrapper = ({ data }) => {
               </span>
             </div>
             <Link
-              href="/contact"
+              href="mailto:o.jcrossland@gmail.com"
               className={`py-3 px-4 rounded-[28px] text-white font-sm backdrop-blur-lg relative overflow-hidden`}
             >
               <div
@@ -210,3 +170,20 @@ const NavbarWrapper = ({ data }) => {
 }
 
 export default NavbarWrapper
+
+
+// function MenuButton({ isActive, setIsActive }) {
+//     return (
+//         <button className="menu-btn block lg:hidden" onClick={() => setIsActive(!isActive)}>
+//             <div className="flex items-center justify-center gap-2 cursor-pointer">
+//                 <div className={`menu-btn__burger ${isActive ? "menu-btn__burger--active" : ""}`} />
+//                 <div className="menu-btn__label flex items-center relative">
+//                     <motion.p variants={animateText} animate={!isActive ? "open" : "closed"} >Menu</motion.p>
+//                     <motion.p variants={animateText} animate={isActive ? "open" : "closed"}>Close</motion.p>
+//                 </div>
+//             </div>
+//         </button>
+//     )
+// }
+
+// export default MenuButton;

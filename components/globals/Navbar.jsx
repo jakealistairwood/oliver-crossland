@@ -1,6 +1,7 @@
 import React from "react";
 import { fetchGlobalOptions, fetchPages } from "@/sanity/sanity-api";
 import NavbarWrapper from "./client/NavbarWrapper";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 const Navbar = async () => {
 

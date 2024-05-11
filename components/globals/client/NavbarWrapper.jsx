@@ -56,7 +56,7 @@ const NavbarWrapper = ({ data }) => {
 
   return width < 1080 ? (
     <>
-        <MobileNav scrolled={scrolled} isLight={isLight} animationControls={containerControls} currentSectionIsDark={currentSectionIsDark} setMobileMenuOpen={setMobileMenuOpen} mobileMenuOpen={mobileMenuOpen} links={pages} />
+        <MobileNav scrolled={scrolled} isLight={isLight} animationControls={containerControls} setMobileMenuOpen={setMobileMenuOpen} mobileMenuOpen={mobileMenuOpen} links={pages} />
         {mobileMenuOpen && <div className="fixed inset-0 bg-black/50 z-[99] backdrop-blur-lg" />}
     </>
   ) : (

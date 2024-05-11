@@ -8,7 +8,6 @@ const MobileNav = ({
   scrolled,
   isLight,
   animationControls,
-  currentSectionIsDark,
   mobileMenuOpen,
   setMobileMenuOpen,
   links,

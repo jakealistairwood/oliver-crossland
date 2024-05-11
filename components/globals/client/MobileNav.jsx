@@ -47,14 +47,9 @@ const MobileNav = ({
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             type="button"
           >
-            {/* <div className={`h-[1px] w-[30px] ${!isLight ? 'bg-white' : 'bg-black'}`} />
-            <div className={`h-[1px] w-[30px] ${!isLight ? 'bg-white' : 'bg-black'}`} />
-            <div className={`h-[1px] w-[30px] ${!isLight ? 'bg-white' : 'bg-black'}`} /> */}
-            <div className={`h-[1px] w-[30px] ${isLight || scrolled ? 'bg-black' : 'bg-white'}`} />
-            <div className={`h-[1px] w-[30px] ${isLight || scrolled ? 'bg-black' : 'bg-white'}`} />
-            <div className={`h-[1px] w-[30px] ${isLight || scrolled ? 'bg-black' : 'bg-white'}`} />
-            {/* <div className="h-[1px] w-[30px] bg-white" />
-                        <div className="h-[1px] w-[30px] bg-white" /> */}
+            <div className={`h-[1px] w-[30px] ${isLight || scrolled || mobileMenuOpen ? 'bg-black' : 'bg-white'}`} />
+            <div className={`h-[1px] w-[30px] ${isLight || scrolled || mobileMenuOpen ? 'bg-black' : 'bg-white'}`} />
+            <div className={`h-[1px] w-[30px] ${isLight || scrolled || mobileMenuOpen ? 'bg-black' : 'bg-white'}`} />
           </button>
         </div>
       </div>
@@ -72,7 +67,7 @@ const MobileNavMenu = ({links, mobileMenuOpen, setMobileMenuOpen }) => {
                 links.map((page, i) => (
                     <li
                         key={`nav-link-${i}`}
-                        className="text-[2rem] font-light py-4 px-4 w-full"
+                        className="text-[2rem] font-light py-4 px-4 w-full sm:max-w-[640px] md:max-w-[768px] sm:mx-auto md:px-8"
                         onClick={() => setMobileMenuOpen(false)}
                     >
                         <NavLink
@@ -82,7 +77,7 @@ const MobileNavMenu = ({links, mobileMenuOpen, setMobileMenuOpen }) => {
                     </li>
             ))}
             <li
-                className="text-[2rem] font-light py-4 px-4 w-full"
+                className="text-[2rem] font-light py-4 px-4 w-full sm:max-w-[640px] md:max-w-[768px] sm:mx-auto md:px-8"
                 onClick={() => setMobileMenuOpen(false)}
             >
                 <NavLink

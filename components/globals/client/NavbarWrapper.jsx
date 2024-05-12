@@ -153,7 +153,7 @@ const NavbarWrapper = ({ data }) => {
             </div>
             <Link
               href="mailto:o.jcrossland@gmail.com"
-              className={`py-3 px-4 rounded-[28px] text-white font-sm backdrop-blur-lg relative overflow-hidden`}
+              className={`py-3 px-4 rounded-[28px] text-white font-sm backdrop-blur-lg relative overflow-hidden ${isLight && !scrolled ? "border border-gray-200" : ""}`}
             >
               <div
                 className={`inset-0 absolute ${scrolled ? 'bg-black' : 'bg-white backdrop-blur-lg'} z-[-1]`}

@@ -90,7 +90,7 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
         <div className="col-span-2">
           {/* {company.name && company.name.length > 0 && <h3 className="font-serif text-xl font-bold uppercase" dangerouslySetInnerHTML={{ __html: company.name }} />} */}
           {company.logo && (
-            <div className="min-w-[60px] max-w-[60px] md:min-w-[80px] md:max-w-[80px] aspect-[1/1] relative">
+            <div className="min-w-[50px] max-w-[50px] md:min-w-[80px] md:max-w-[80px] aspect-[1/1] relative">
               <Image
                 src={urlFor(company?.logo).format('webp').url()}
                 alt="company logo"
@@ -104,13 +104,13 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
           <div className="flex flex-col">
             {position && position.length > 0 && (
               <h3
-                className="font-serif text-2xl font-bold uppercase"
+                className="font-serif text-lg md:text-2xl font-bold uppercase"
                 dangerouslySetInnerHTML={{__html: position}}
               />
             )}
             {company?.name && company?.name.length > 0 && (
               <p
-                className="font-serif text-xl font-light opacity-80"
+                className="font-serif text-md md:text-xl font-light opacity-80"
                 dangerouslySetInnerHTML={{__html: company?.name}}
               />
             )}
@@ -138,7 +138,7 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
               <span className="min-h-10 inline-block" />
               {responsibilites?.map((responsibility, i) => (
                 <li
-                  className="ml-4 pl-2 font-serif mb-6 opacity-80 text-lg font-light leading-[1.6]"
+                  className="ml-4 pl-2 font-serif mb-6 opacity-80 text-normal md:text-lg font-light leading-[1.6]"
                   key={`job-responsibility-${i}`}
                 >
                   {responsibility}
@@ -176,13 +176,13 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
           <div className="flex flex-col">
             {position && position.length > 0 && (
               <h3
-                className="font-serif text-2xl font-bold uppercase"
+                className="font-serif text-lg md:text-2xl font-bold uppercase"
                 dangerouslySetInnerHTML={{__html: position}}
               />
             )}
             {company?.name && company?.name.length > 0 && (
               <p
-                className="font-serif text-xl font-light opacity-80"
+                className="font-serif text-md md:text-xl font-light opacity-80"
                 dangerouslySetInnerHTML={{__html: company?.name}}
               />
             )}

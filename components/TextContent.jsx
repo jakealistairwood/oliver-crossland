@@ -18,9 +18,9 @@ const TextContent = (props) => {
     containerClasses.push('mx-auto')
   }
 
-  if(under_home_masthead_video) {
-    containerClasses.push('xl:pt-[420px]')
-  }
+  // if(under_home_masthead_video) {
+  //   containerClasses.push('xl:pt-[420px]')
+  // }
 
   containerClasses = containerClasses.join(' ')
 

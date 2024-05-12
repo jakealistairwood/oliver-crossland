@@ -12,7 +12,7 @@ const AboutMasthead = ({ heading, link, image }) => {
             <div className="container">
                 <div className="flex flex-col items-center text-center mx-auto pb-20 px-4">
                     <div
-                        className="text-transparent leading-[0.9] font-bold text-[8rem] md:text-[16rem] font-outline-2 uppercase masthead-marquee-item"
+                        className="text-transparent leading-[0.9] font-bold text-[8rem] md:text-[16rem] font-outline-2 uppercase masthead-marquee-item pointer-events-none"
                         dangerouslySetInnerHTML={{__html: "About Me"}}
                     />
                     <h1 className="font-light font-serif text-white text-[1.3rem] md:text-2xl leading-tight max-w-[728px] mx-auto min-h-[70px] mt-10">

@@ -38,7 +38,7 @@ import { urlFor } from "@/utils/SanityImage";
 const ImageDivider = ({ image }) => {
 
     return (
-        <div className="min-h-[80vh] w-full bg-transparent overflow-hidden relative">
+        <div className="min-h-[40vh] lg:min-h-[80vh] w-full bg-transparent overflow-hidden relative">
             <Image
                 src={urlFor(image).format("webp").url()}
                 fill 

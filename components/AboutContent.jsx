@@ -15,7 +15,7 @@ const AboutContent = ({ subheading, heading, content, gallery }) => {
                     </div>
                     <div className="lg:col-span-8">
                         <article className="flex flex-col">
-                            {heading && heading.length > 0 && <h2 className="font-serif pb-16 mb-16 border-b border-[#E5E5E5] text-[2.625rem] leading-[1.2] tracking-[-0.02em]" dangerouslySetInnerHTML={{ __html: heading }} />}
+                            {heading && heading.length > 0 && <h2 className="font-serif pb-12 mb-12 md:pb-16 md:mb-16 border-b border-[#E5E5E5] text-3xl md:text-[2.625rem] leading-[1.2] tracking-[-0.02em]" dangerouslySetInnerHTML={{ __html: heading }} />}
                             {content && content.length > 0 && (
                                 <div className="flex flex-col prose text-2xl">
                                     <PortableText value={content} />

@@ -70,20 +70,18 @@ const MobileNavMenu = ({links, mobileMenuOpen, setMobileMenuOpen }) => {
                         className="text-[2rem] font-light py-4 px-4 w-full sm:max-w-[640px] md:max-w-[768px] sm:mx-auto md:px-8"
                         onClick={() => setMobileMenuOpen(false)}
                     >
-                        <NavLink
-                            link={`/${page?.slug !== '/' ? page?.slug : ''}`}
-                            label={`${page?.slug === '/' ? 'Home' : page?.title}`}
-                        />
+                        <Link href={`/${page?.slug !== '/' ? page?.slug : ''}`} className="w-full block">
+                            {page?.slug === "/" ? "Home" : page?.title}
+                        </Link>
                     </li>
             ))}
             <li
                 className="text-[2rem] font-light py-4 px-4 w-full sm:max-w-[640px] md:max-w-[768px] sm:mx-auto md:px-8"
                 onClick={() => setMobileMenuOpen(false)}
             >
-                <NavLink
-                    link="mailto:o.jcrossland@gmail.com"
-                    label="Get in Touch"
-                />
+                <Link href="mailto:o.jcrossland@gmail.com" className="w-full block">
+                    Let's Work Together
+                </Link>
             </li>
         </menu>
   )

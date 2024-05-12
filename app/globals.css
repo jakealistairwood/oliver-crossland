@@ -87,16 +87,43 @@ body {
     @apply uppercase text-[3rem] font-bold pb-6;
   }
 
-  p, li {
-   @apply text-[1.2rem] font-light opacity-80 pb-2;
+  h3 {
+    @apply uppercase text-[2rem] font-bold pb-6;
+  }
+  h4 {
+    @apply uppercase text-[1.75rem] font-bold pb-6;
+  }
+  h5 {
+    @apply uppercase text-[1.5rem] font-bold pb-6;
+  }
+
+  
+  p, li, blockquote {
+    @apply text-[1.2rem] font-light opacity-80 pb-[1em];
+  }
+
+  p:empty {
+    @apply h-0 p-0 m-0;
+  }
+
+  blockquote {
+    @apply pl-8 border-l-2 border-solid border-gray-400 mb-[1em] bg-frostWhite py-6;
+  }
+
+  strong {
+    @apply font-semibold;
   }
 
   ul {
     list-style-type: disc;
-    @apply ml-8 mt-4;
+    @apply ml-8 mt-0 mb-[1em];
   }
 
   li {
     @apply pl-4;
+  }
+
+  a {
+    @apply underline underline-offset-8 font-medium;
   }
 }

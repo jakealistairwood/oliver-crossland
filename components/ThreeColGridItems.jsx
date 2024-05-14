@@ -51,7 +51,7 @@ const ThreeColGridItems = ({ section_header, grid_items, options }) => {
                                     <span className="text-paleSkyBlue text-xl">{i < 9 ? `0${i + 1}` : i + 1}</span>
                                 )}
                             </div>
-                            <div className="mt-auto pt-10">
+                            <div className="pt-10">
                                 <h3 className="uppercase font-serif text-lg font-medium">{item?.heading}</h3>
                                 {item?.description && item?.description.length > 0 && (
                                     <p className="font-serif font-normal text-navy opacity-80 mt-6">{item?.description}</p>

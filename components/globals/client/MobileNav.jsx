@@ -80,7 +80,7 @@ const MobileNavMenu = ({links, mobileMenuOpen, setMobileMenuOpen }) => {
                 onClick={() => setMobileMenuOpen(false)}
             >
                 <Link href="mailto:o.jcrossland@gmail.com" className="w-full block">
-                    Let's Work Together
+                    Let&apos;s Work Together
                 </Link>
             </li>
         </menu>

@@ -127,3 +127,15 @@ body {
     @apply underline underline-offset-8 font-medium;
   }
 }
+
+.availability-spinner {
+  animation-name: rotate;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate{
+  from{ transform: rotate(-360deg); }
+  to{ transform: rotate(360deg); }
+}

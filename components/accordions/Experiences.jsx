@@ -79,12 +79,15 @@ const JobPosition = ({index, company, position, responsibilites, date, backgroun
       whileInView="visible"
       viewport={{once: true, amount: 0.3}}
       type="button"
-      onClick={() => setAccordionOpen(!accordionOpen)}
+      onClick={() => {
+        setAccordionOpen(!accordionOpen)
+        // setHovered(false)
+      }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
       onBlur={() => setHovered(false)}
-      className={`border-solid ${backgroundColor === 'blueGrey' ? 'border-[#444B55]' : 'border-[#E5E5E5]'}  text-left py-8 ${index === 0 ? 'border-t border-b' : 'border-b'}`}
+      className={`border-solid ${backgroundColor === 'blueGrey' ? 'border-[#444B55]' : 'border-[#E5E5E5]'} ${hovered ? "bg-[#333a46]" : ""} transition-all duration-200 ease text-left py-8 ${index === 0 ? 'border-t border-b' : 'border-b'}`}
     >
       <div className="grid grid-cols-12 w-full">
         <div className="col-span-2">
